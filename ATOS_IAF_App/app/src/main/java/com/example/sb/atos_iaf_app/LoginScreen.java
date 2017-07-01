@@ -29,6 +29,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.sb.atos_iaf_app.Sql.Contact;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +46,7 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
     /**
      * Id to identity READ_CONTACTS permission request.
      */
+    Contact helper=new Contact(this);
     private static final int REQUEST_READ_CONTACTS = 0;
 
     /**
@@ -165,46 +169,64 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
+        String user = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+        if (TextUtils.isEmpty(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
         }
 
         // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
+        if (TextUtils.isEmpty(user)) {
             mEmailView.setError(getString(R.string.error_field_required));
             focusView = mEmailView;
             cancel = true;
-        } else if (!isEmailValid(email)) {
+        } /*else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
-        }
+        }*/
 
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
+
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
             //mAuthTask = new UserLoginTask(email, password);
            // mAuthTask.execute((Void) null);
-            Intent thirdPage=new Intent(LoginScreen.this,Homepage.class);
-            startActivity(thirdPage);
+            String pass1=helper.searchUser(user);
+            if(pass1.equals(password))
+            {
+
+               // i.putExtra("UserName",user);
+                Intent thirdPage=new Intent(LoginScreen.this,Homepage.class);
+                startActivity(thirdPage);
+
+            }
+            else
+            {
+                Toast temp= Toast.makeText(LoginScreen.this,"Username or password is incorrect",Toast.LENGTH_SHORT);
+                temp.show();
+                Intent i2=new Intent(this,LoginScreen.class);
+
+                startActivity(i2);
+
+
+            }
         }
     }
 
-    private boolean isEmailValid(String email) {
+   /* private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
         return email.contains("@");
     }
@@ -212,7 +234,7 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
         return password.length() > 4;
-    }
+    }*/
 
     /**
      * Shows the progress UI and hides the login form.

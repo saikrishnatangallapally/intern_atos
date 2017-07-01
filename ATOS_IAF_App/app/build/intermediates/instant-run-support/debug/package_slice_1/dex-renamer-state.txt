@@ -1,4 +1,0 @@
-#Sat Jul 01 15:12:45 IST 2017
-base.0=C\:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_1
-renamed.0=classes.dex
-file.0=C\:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_1\\classes.dex
