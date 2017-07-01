@@ -4,15 +4,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:title="Home" />
-        <item
-            android:id="@+id/nav_gallery"
-
-            android:title="Job Listings" />
+            android:title="Homepage" />
         <item
             android:id="@+id/nav_slideshow"
 
-            android:title="Support" />
+            android:title="Feedback" />
         <item
             android:id="@+id/nav_manage"
 

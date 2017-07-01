@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:2:1-38:12
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:3:5-42
 		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
@@ -26,7 +26,7 @@ ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main
 	android:name
 		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:8:22-69
 application
-ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:10:5-36:19
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:10:5-35:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zayan\.android\build-cache\86f895de4f5d215fe9c512d7ada3787e6a3e8620\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:23.4.0] C:\Users\zayan\.android\build-cache\54ab8c6620cf35c7d0accd69cee44a06be76bc20\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\zayan\.android\build-cache\4e5980b1cfd65e6507b1ce9a53d2eab38ff9f1f0\output\AndroidManifest.xml:25:5-20
@@ -79,10 +79,6 @@ ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main
 		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:34:13-56
 	android:name
 		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:32:13-37
-activity#com.example.sb.atos_iaf_app.Dashboard
-ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:35:9-56
-	android:name
-		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:35:19-44
 uses-sdk
 INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zayan\.android\build-cache\86f895de4f5d215fe9c512d7ada3787e6a3e8620\output\AndroidManifest.xml:5:5-7:41

@@ -38,7 +38,6 @@
             android:name="com.example.sb.atos_iaf_app.Homepage"
             android:label="@string/title_activity_third"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.sb.atos_iaf_app.Dashboard" />
 
         <provider
             android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
