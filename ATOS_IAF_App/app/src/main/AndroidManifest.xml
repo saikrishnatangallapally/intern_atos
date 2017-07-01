@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstActivity">
+        <activity android:name=".LogoStartScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,15 +21,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SecondActivity"
+            android:name=".LoginScreen"
             android:label="@string/title_activity_second"
-            android:parentActivityName=".FirstActivity">
+            android:parentActivityName=".LogoStartScreen">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sb.atos_iaf_app.FirstActivity" />
+                android:value="com.example.sb.atos_iaf_app.LogoStartScreen" />
         </activity>
         <activity
-            android:name=".ThirdActivity"
+            android:name=".Homepage"
             android:label="@string/title_activity_third"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

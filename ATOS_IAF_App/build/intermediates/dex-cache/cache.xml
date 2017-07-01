@@ -2,94 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Android\.android\build-cache\28ea5b0b20d8e8075c5387890230cbabc4772a0a\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\pre-dexed\debug\classes_cc59a082ea208533b6bd3cff89f83d9b96b415b9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Android\.android\build-cache\99be0df3cb957f8a115fcb5af125d0e1139b33d4\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\pre-dexed\debug\classes_7f1b37e9945de11840578dccec23790792968f28.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Hp\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_724194078e764c5db437fe465bbfac82212b3145.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Hp\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_4b53e22aa8f4bd8408d5756f8a37cf02929b9411.jar" />
+        sha1="731e5db9a583e7326fe534bf849a4b349583537e">
+        <dex dex="C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_1babf978f64b6f721ee822a6b34d87896b44a62d\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\ATOS\ATOS_IAF_App\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4bc5fde6ae265e190b9a6d951b9b30283ef05890\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Android\.android\build-cache\214d32526ac869e5a106cb9409a6dcd3f1b1239f\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\pre-dexed\debug\classes_68df6c5db3a1af912ac14f4662ca86e0cff8f213.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Android\.android\build-cache\9ba65ab1b39b417b227e30683f38e96d0fa1550b\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\pre-dexed\debug\classes_5c36bc5ce0aeb1e7045c8f8e95d919b7fcfebd43.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Android\.android\build-cache\28ea5b0b20d8e8075c5387890230cbabc4772a0a\output\jars\libs\internal_impl-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_fd132242a66a55ee72413d4540a976120a4f8c6a.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\ATOS\ATOS_IAF_App\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="38914d75d34b4e9e322b5b9f39d379441892eb63">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_353fe27536905c6e43ecc465860754086a6d58a1\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Android\.android\build-cache\b10e433844c87da02147669462f88b467f197e55\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="C:\ATOS\ATOS_IAF_App\app\build\intermediates\pre-dexed\debug\classes_a4415e5d1b255a7ae8563fabcb97030c0dde8379.jar" />
+        <dex dex="C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_7e680ba362a2cde4ecc29a8c940e62fec0116f5b\classes.dex" />
     </item>
 
 </items>

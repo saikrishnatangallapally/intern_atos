@@ -1,98 +1,98 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:3:5-42
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:6:5-71
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:6:5-71
 	android:name
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:6:22-68
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:6:22-68
 uses-permission#android.permission.READ_PROFILE
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:7:5-71
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:7:5-71
 	android:name
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:7:22-68
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:7:22-68
 uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:8:5-72
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:8:5-72
 	android:name
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:8:22-69
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:8:22-69
 application
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:10:5-35:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Android\.android\build-cache\b10e433844c87da02147669462f88b467f197e55\output\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:23.4.0] C:\Android\.android\build-cache\56ac0dfdc1f7ca9011820973b92bde8d05806d70\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Android\.android\build-cache\9ba65ab1b39b417b227e30683f38e96d0fa1550b\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Android\.android\build-cache\99be0df3cb957f8a115fcb5af125d0e1139b33d4\output\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Android\.android\build-cache\214d32526ac869e5a106cb9409a6dcd3f1b1239f\output\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.4.0] C:\Android\.android\build-cache\28ea5b0b20d8e8075c5387890230cbabc4772a0a\output\AndroidManifest.xml:22:5-20
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:10:5-35:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zayan\.android\build-cache\86f895de4f5d215fe9c512d7ada3787e6a3e8620\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:23.4.0] C:\Users\zayan\.android\build-cache\54ab8c6620cf35c7d0accd69cee44a06be76bc20\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\zayan\.android\build-cache\4e5980b1cfd65e6507b1ce9a53d2eab38ff9f1f0\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\zayan\.android\build-cache\caa74598cb6ee380424487ca2196882b54cab27b\output\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\zayan\.android\build-cache\d0df3a2befad8f0b3e38d0766d5ada80a2547367\output\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\zayan\.android\build-cache\6802746cb0dfa58d5f04afc8c23bedae9a3d00d3\output\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:13:9-41
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:13:9-41
 	android:supportsRtl
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:14:9-35
 	android:allowBackup
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:11:9-35
 	android:icon
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:12:9-43
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:12:9-43
 	android:theme
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:15:9-40
-activity#com.example.sb.atos_iaf_app.FirstActivity
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:16:9-22:20
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:15:9-40
+activity#com.example.sb.atos_iaf_app.LogoStartScreen
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:16:9-22:20
 	android:name
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:16:19-48
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:16:19-50
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:17:13-21:29
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:20:27-74
-activity#com.example.sb.atos_iaf_app.SecondActivity
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:23:9-30:20
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:20:27-74
+activity#com.example.sb.atos_iaf_app.LoginScreen
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:23:9-30:20
 	android:label
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:25:13-58
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:25:13-58
 	android:parentActivityName
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:26:13-56
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:26:13-58
 	android:name
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:24:13-43
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:24:13-40
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:27:13-29:77
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:27:13-29:79
 	android:value
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:29:17-74
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:29:17-76
 	android:name
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:28:17-63
-activity#com.example.sb.atos_iaf_app.ThirdActivity
-ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:31:9-34:68
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:28:17-63
+activity#com.example.sb.atos_iaf_app.Homepage
+ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:31:9-34:68
 	android:label
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:33:13-57
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:33:13-57
 	android:theme
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:34:13-56
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:34:13-56
 	android:name
-		ADDED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml:32:13-42
+		ADDED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml:32:13-37
 uses-sdk
-INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Android\.android\build-cache\b10e433844c87da02147669462f88b467f197e55\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:23.4.0] C:\Android\.android\build-cache\56ac0dfdc1f7ca9011820973b92bde8d05806d70\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Android\.android\build-cache\2696bfe0af1f75ec89daee5787f8da1d039c439d\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Android\.android\build-cache\9ba65ab1b39b417b227e30683f38e96d0fa1550b\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Android\.android\build-cache\99be0df3cb957f8a115fcb5af125d0e1139b33d4\output\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Android\.android\build-cache\214d32526ac869e5a106cb9409a6dcd3f1b1239f\output\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:23.4.0] C:\Android\.android\build-cache\28ea5b0b20d8e8075c5387890230cbabc4772a0a\output\AndroidManifest.xml:20:5-43
+INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zayan\.android\build-cache\86f895de4f5d215fe9c512d7ada3787e6a3e8620\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:23.4.0] C:\Users\zayan\.android\build-cache\54ab8c6620cf35c7d0accd69cee44a06be76bc20\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\zayan\.android\build-cache\48f4264ebb1c97563f87cf0b0367b2a1f01232c5\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\zayan\.android\build-cache\4e5980b1cfd65e6507b1ce9a53d2eab38ff9f1f0\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\zayan\.android\build-cache\caa74598cb6ee380424487ca2196882b54cab27b\output\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\zayan\.android\build-cache\d0df3a2befad8f0b3e38d0766d5ada80a2547367\output\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\zayan\.android\build-cache\6802746cb0dfa58d5f04afc8c23bedae9a3d00d3\output\AndroidManifest.xml:20:5-43
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Android\.android\build-cache\9ba65ab1b39b417b227e30683f38e96d0fa1550b\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\zayan\.android\build-cache\4e5980b1cfd65e6507b1ce9a53d2eab38ff9f1f0\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
-		INJECTED from C:\ATOS\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zayan\Documents\GitHub\intern_atos\ATOS_IAF_App\app\src\main\AndroidManifest.xml

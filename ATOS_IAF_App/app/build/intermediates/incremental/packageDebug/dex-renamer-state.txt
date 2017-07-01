@@ -1,7 +1,7 @@
-#Fri Jun 30 13:49:55 IST 2017
-base.0=C\:\\ATOS\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_353fe27536905c6e43ecc465860754086a6d58a1
+#Sat Jul 01 07:30:15 IST 2017
+base.0=C\:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_1babf978f64b6f721ee822a6b34d87896b44a62d
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=C\:\\ATOS\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4bc5fde6ae265e190b9a6d951b9b30283ef05890\\classes.dex
-base.1=C\:\\ATOS\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4bc5fde6ae265e190b9a6d951b9b30283ef05890
-file.0=C\:\\ATOS\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_353fe27536905c6e43ecc465860754086a6d58a1\\classes.dex
+file.1=C\:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_7e680ba362a2cde4ecc29a8c940e62fec0116f5b\\classes.dex
+base.1=C\:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_7e680ba362a2cde4ecc29a8c940e62fec0116f5b
+file.0=C\:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_1babf978f64b6f721ee822a6b34d87896b44a62d\\classes.dex
