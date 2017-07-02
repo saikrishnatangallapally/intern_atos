@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.util.Log;
 
 public class Session {
     SharedPreferences pref;
@@ -63,9 +64,10 @@ public class Session {
     }
     public void logoutUser(){
         // Clearing all data from Shared Preferences
+        Log.d("jj","hjshjs");
         editor.clear();
         editor.commit();
-        System.out.print("hjshjs");
+        Log.d("dd","hjshjs");
 
         // After logout redirect user to Loing Activity
         Intent i = new Intent(_context, LoginScreen.class);

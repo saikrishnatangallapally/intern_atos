@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -73,11 +74,13 @@ public class Homepage extends AppCompatActivity
         String name = user.get(Session.KEY_NAME);
 
         // email
+        Log.d("user",name);
         String password = user.get(Session.KEY_PASSWORD);
+        System.out.print(name);
 
         // displaying user data
       // lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
-       // lblPassword.setText(Html.fromHtml("Passwo: <b>" + password + "</b>"));
+        //lblPassword.setText(Html.fromHtml("Passwo: <b>" + password + "</b>"));
 
 
         /**

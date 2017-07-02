@@ -145,7 +145,8 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
             }
         }
     }
-
+    public void onBackPressed(){
+    }
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
      */
