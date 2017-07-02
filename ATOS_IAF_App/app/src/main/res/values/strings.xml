@@ -24,4 +24,6 @@
 
     <string name="action_settings">Settings</string>
     <string name="interview_management_services">INTERVIEW MANAGEMENT SERVICES</string>
+    <string name="interview_slot">Interview Slot:</string>
+    <string name="_10_am">10 AM</string>
 </resources>

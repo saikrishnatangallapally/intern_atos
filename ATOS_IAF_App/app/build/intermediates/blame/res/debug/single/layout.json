@@ -72,16 +72,16 @@
         "source": "C:\\Users\\zayan\\.android\\build-cache\\4e5980b1cfd65e6507b1ce9a53d2eab38ff9f1f0\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\zayan\\.android\\build-cache\\54ab8c6620cf35c7d0accd69cee44a06be76bc20\\output\\res\\layout\\design_navigation_item.xml"
+        "merged": "C:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\zayan\\.android\\build-cache\\54ab8c6620cf35c7d0accd69cee44a06be76bc20\\output\\res\\layout\\design_navigation_item_header.xml"
     },
     {
         "merged": "C:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
         "source": "C:\\Users\\zayan\\.android\\build-cache\\4e5980b1cfd65e6507b1ce9a53d2eab38ff9f1f0\\output\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "C:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
-        "source": "C:\\Users\\zayan\\.android\\build-cache\\54ab8c6620cf35c7d0accd69cee44a06be76bc20\\output\\res\\layout\\design_navigation_item_header.xml"
+        "merged": "C:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\zayan\\.android\\build-cache\\54ab8c6620cf35c7d0accd69cee44a06be76bc20\\output\\res\\layout\\design_navigation_item.xml"
     },
     {
         "merged": "C:\\Users\\zayan\\Documents\\GitHub\\intern_atos\\ATOS_IAF_App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
