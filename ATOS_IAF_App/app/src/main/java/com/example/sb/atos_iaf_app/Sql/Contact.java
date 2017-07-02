@@ -14,16 +14,16 @@ import java.sql.SQLClientInfoException;
 
 public class Contact extends SQLiteOpenHelper {
     SQLiteDatabase db;
-    public static final int DATABASE_VERSION = 5;
+    public static final int DATABASE_VERSION = 6;
     public static final String DATABASE_NAME = "users.db";
     public static final String TABLE_NAME = "users";
     public static final String COLUMN_NAME = "Name";
     public static final String COLUMN_DAS_ID = "DASID";
     public static final String COLUMN_EMAIL = "Email";
-    public static final String COLUMN_PASSWORD = "Password";
+    public static final String COLUMN_OTP = "OTP";
     public static final String COLUMN_CONTACT = "Contact";
     private static final String TABLE_CREATE = " create table users(DASID text primary key not null ," +
-            " Name text not null,email text not null,Password text not null ," +
+            " Name text not null,email text not null,OTP text not null ," +
             " Contact long not null); ";
 
     public Contact(Context context) {
@@ -38,13 +38,13 @@ public class Contact extends SQLiteOpenHelper {
         v.put(COLUMN_NAME, "Akshitha Valishetti");
         v.put(COLUMN_DAS_ID, "A12345");
         v.put(COLUMN_EMAIL, "valishetti.akshitha@atos.net");
-        v.put(COLUMN_PASSWORD, "Akshitha@123");
+        v.put(COLUMN_OTP, "0000");
         v.put(COLUMN_CONTACT, "9878798978");
         ContentValues v1 = new ContentValues();
         v1.put(COLUMN_NAME, "Meghana Ponnuru");
         v1.put(COLUMN_DAS_ID, "A67890");
         v1.put(COLUMN_EMAIL, "ponnuru.meghana@atos.net");
-        v1.put(COLUMN_PASSWORD, "Meghana@123");
+        v1.put(COLUMN_OTP, "0000");
         v1.put(COLUMN_CONTACT, "9784984789");
         db.insert(TABLE_NAME, null, v);
         // db.insert(TABLE_NAME,null,v1);
@@ -54,7 +54,7 @@ public class Contact extends SQLiteOpenHelper {
     public String searchUser(String user) {
         System.out.print("hiausi");
         db = this.getReadableDatabase();
-        String query = " select DASID,Password from " +  TABLE_NAME;
+        String query = " select DASID,OTP from " +  TABLE_NAME;
         Cursor c = db.rawQuery(query, null);
         System.out.print("hiausi");
         String a, b;

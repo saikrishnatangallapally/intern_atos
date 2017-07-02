@@ -4,12 +4,12 @@
 
     <!-- Strings related to login -->
     <string name="prompt_email">UserName</string>
-    <string name="prompt_password">Password</string>
+    <string name="prompt_password">OTP</string>
     <string name="action_sign_in">LOG IN</string>
     <string name="action_enter_app">ENTER</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="sign_up">SIGN UP</string>
-    <string name="forgot_pass">Forgot Password ?</string>
+    <string name="forgot_pass">Generate OTP</string>
     <string name="error_invalid_email">Username is invalid</string>
     <string name="error_invalid_password">Enter Password</string>
     <string name="error_incorrect_password">This password is incorrect</string>

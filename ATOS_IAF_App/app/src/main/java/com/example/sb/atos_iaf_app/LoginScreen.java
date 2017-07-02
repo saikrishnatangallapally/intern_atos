@@ -46,6 +46,8 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
     /**
      * Id to identity READ_CONTACTS permission request.
      */
+    Session session;
+    Button btnLogin1;
     Contact helper=new Contact(this);
     private static final int REQUEST_READ_CONTACTS = 0;
 
@@ -62,7 +64,7 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
     private UserLoginTask mAuthTask = null;
 
     // UI references.
-    private AutoCompleteTextView mEmailView;
+    private AutoCompleteTextView mUserView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
@@ -72,8 +74,9 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginscreen);
         setupActionBar();
+        session = new Session(getApplicationContext());
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        mUserView = (AutoCompleteTextView) findViewById(R.id.username);
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -88,8 +91,8 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
+        Button LOGIN = (Button) findViewById(R.id.btnLogin);
+        LOGIN.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
@@ -116,7 +119,7 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
             return true;
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(mEmailView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(mUserView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
                     .setAction(android.R.string.ok, new View.OnClickListener() {
                         @Override
                         @TargetApi(Build.VERSION_CODES.M)
@@ -142,7 +145,8 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
             }
         }
     }
-
+    public void onBackPressed(){
+    }
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
      */
@@ -165,11 +169,11 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
         }
 
         // Reset errors.
-        mEmailView.setError(null);
+        mUserView.setError(null);
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String user = mEmailView.getText().toString();
+        String user = mUserView.getText().toString();
         String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
@@ -184,8 +188,8 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(user)) {
-            mEmailView.setError(getString(R.string.error_field_required));
-            focusView = mEmailView;
+            mUserView.setError(getString(R.string.error_field_required));
+            focusView = mUserView;
             cancel = true;
         } /*else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
@@ -209,6 +213,7 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
             {
 
                // i.putExtra("UserName",user);
+                session.createLoginSession(user, pass1);
                 Intent thirdPage=new Intent(LoginScreen.this,Homepage.class);
                 startActivity(thirdPage);
 
@@ -312,7 +317,7 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
                 new ArrayAdapter<>(LoginScreen.this,
                         android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
 
-        mEmailView.setAdapter(adapter);
+        mUserView.setAdapter(adapter);
     }
 
 
