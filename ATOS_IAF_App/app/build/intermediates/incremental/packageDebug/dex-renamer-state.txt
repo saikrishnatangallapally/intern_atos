@@ -1,7 +1,0 @@
-#Fri Jun 30 13:49:55 IST 2017
-base.0=C\:\\ATOS\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_353fe27536905c6e43ecc465860754086a6d58a1
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=C\:\\ATOS\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4bc5fde6ae265e190b9a6d951b9b30283ef05890\\classes.dex
-base.1=C\:\\ATOS\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4bc5fde6ae265e190b9a6d951b9b30283ef05890
-file.0=C\:\\ATOS\\ATOS_IAF_App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_353fe27536905c6e43ecc465860754086a6d58a1\\classes.dex
