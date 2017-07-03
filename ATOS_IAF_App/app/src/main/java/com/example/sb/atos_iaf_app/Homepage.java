@@ -129,18 +129,21 @@ public class Homepage extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_Homepage) {
+            Intent list = new Intent(this, JobsListActivity.class);
+            startActivity(list);
+            return true;
 
 
         } else if (id == R.id.nav_Feedback) {
-             Intent fed=new Intent(this,Feedback.class);
-             startActivity(fed);
+             //Intent fed=new Intent(this,Feedback.class);
+             //startActivity(fed);
              return true;
 
         } else if (id == R.id.nav_Logout) {
             session.logoutUser();
            // Intent a=new Intent(this,LoginScreen.class);
            // startActivity(a);
-           // return true;
+             return true;
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -151,4 +154,9 @@ public class Homepage extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void sendM1(View view) {
+        Intent intent = new Intent(this, JobsListActivity.class);
+        startActivity(intent);
+    }
+
 }

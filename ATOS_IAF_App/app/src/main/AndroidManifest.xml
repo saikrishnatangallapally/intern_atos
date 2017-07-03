@@ -41,6 +41,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.sb.atos_iaf_app.Homepage" />
         </activity>
+        <activity
+            android:name=".JobsListActivity"
+            android:label="@string/title_jobs_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".JobsDetailActivity"
+            android:label="@string/title_jobs_detail"
+            android:parentActivityName=".JobsListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.sb.atos_iaf_app.JobsListActivity" />
+        </activity>
     </application>
 
 </manifest>

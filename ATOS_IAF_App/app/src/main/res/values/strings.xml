@@ -27,4 +27,6 @@
     <string name="interview_slot">Interview Slot:</string>
     <string name="_10_am">10 AM</string>
     <string name="title_activity_feedback">Feedback</string>
+    <string name="title_jobs_list">Candidates</string>
+    <string name="title_jobs_detail">Jobs Detail</string>
 </resources>
