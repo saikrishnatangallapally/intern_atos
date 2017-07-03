@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.widget.AutoCompleteTextView;
 import java.util.HashMap;
 
 public class Homepage extends AppCompatActivity
@@ -33,15 +33,6 @@ public class Homepage extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -137,12 +128,15 @@ public class Homepage extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.nav_Homepage) {
 
-        } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.logout) {
+        } else if (id == R.id.nav_Feedback) {
+             Intent fed=new Intent(this,Feedback.class);
+             startActivity(fed);
+             return true;
+
+        } else if (id == R.id.nav_Logout) {
             session.logoutUser();
            // Intent a=new Intent(this,LoginScreen.class);
            // startActivity(a);
