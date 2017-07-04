@@ -2,9 +2,6 @@ package com.example.sb.atos_iaf_app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,10 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AutoCompleteTextView;
+
 import java.util.HashMap;
 
 public class Homepage extends AppCompatActivity
@@ -42,7 +38,7 @@ public class Homepage extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        TextView lblName = (TextView) findViewById(R.id.username);
+        TextView lblName = (TextView) findViewById(R.id.email);
         TextView lblPassword = (TextView) findViewById(R.id.password);
 
         // Button logout

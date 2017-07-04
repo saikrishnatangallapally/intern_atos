@@ -3,23 +3,21 @@ package com.example.sb.atos_iaf_app;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.ActionBar;
 import android.app.LoaderManager.LoaderCallbacks;
-
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.content.Intent;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -32,8 +30,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sb.atos_iaf_app.Sql.Contact;
+import com.example.sb.atos_iaf_app.Sql.DataBaseHelper;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,8 +48,10 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
      */
     Session session;
     Button btnLogin1;
-    Contact helper=new Contact(this);
     private static final int REQUEST_READ_CONTACTS = 0;
+    DataBaseHelper myDbHelper ;
+   // myDbHelper = new DataBaseHelper(this);
+
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -77,7 +78,28 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
         setupActionBar();
         session = new Session(getApplicationContext());
         // Set up the login form.
-        mUserView = (AutoCompleteTextView) findViewById(R.id.username);
+        myDbHelper = new DataBaseHelper(this);
+
+        try {
+
+            myDbHelper.createDataBase();
+
+        } catch (IOException ioe) {
+
+            throw new Error("Unable to create database");
+
+        }
+
+        try {
+
+            myDbHelper.openDataBase();
+
+        }catch(SQLException sqle){
+
+            throw sqle;
+
+        }
+        mUserView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -209,7 +231,7 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
             showProgress(true);
             //mAuthTask = new UserLoginTask(email, password);
            // mAuthTask.execute((Void) null);
-            String pass1=helper.searchUser(user);
+            String pass1=myDbHelper.searchUser(user);
             if(pass1.equals(password))
             {
 
