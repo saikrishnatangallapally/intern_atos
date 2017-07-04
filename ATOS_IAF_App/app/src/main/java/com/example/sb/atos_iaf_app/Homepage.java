@@ -1,5 +1,7 @@
 package com.example.sb.atos_iaf_app;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
 
 public class Homepage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -125,8 +132,7 @@ public class Homepage extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_Homepage) {
-            Intent list = new Intent(this, JobsListActivity.class);
-            startActivity(list);
+
             return true;
 
 
@@ -150,9 +156,9 @@ public class Homepage extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void sendM1(View view) {
-        Intent intent = new Intent(this, JobsListActivity.class);
-        startActivity(intent);
+
+
     }
 
-}
+
+

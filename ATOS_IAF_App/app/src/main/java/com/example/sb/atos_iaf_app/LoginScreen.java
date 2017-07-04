@@ -237,10 +237,11 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
 
                // i.putExtra("UserName",user);
                 session.createLoginSession(user, pass1);
-                Intent thirdPage=new Intent(LoginScreen.this,Homepage.class);
+                Intent thirdPage=new Intent(LoginScreen.this,MainActivity.class);
                 startActivity(thirdPage);
 
             }
+
             else
             {
                 Toast temp= Toast.makeText(LoginScreen.this,"Username or password is incorrect",Toast.LENGTH_SHORT);

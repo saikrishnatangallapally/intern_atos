@@ -170,6 +170,23 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         }
         myDataBase.close();
         return b;
+    }
+    public String displayJobID() {
+        myDataBase = this.getReadableDatabase();
+        Cursor c = myDataBase.rawQuery(" Select JobID from JobList ", null);
+        String a, b = null;
+        int ct=0;
+        if(c.moveToFirst()){
+            do {
+                b =c.getString(1);
+                ct++;
+
+                }
+                while (c.moveToNext());
+
+            }
+            myDataBase.close();
+        return b;
 
     }
 
@@ -183,7 +200,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     }
 
-    // Add your public helper methods to access and get content from the database.
+    // Add your public helper methods to access and get description from the database.
     // You could return cursors by doing "return myDataBase.query(....)" so it'd be easy
     // to you to create adapters for your views.
 
