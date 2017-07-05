@@ -4,7 +4,6 @@ package com.example.sb.atos_iaf_app;
  * Created by zayan on 5/7/17.
  */
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,12 +31,12 @@ public class CandidateDetailFragment extends Fragment implements View.OnClickLis
         testButton.setOnClickListener(this);
 
         //Handle the Child Fragment. For demo purpose I haven't created a new Fragment
-        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-        JobsListFragment elf = new JobsListFragment();
-        ft.replace(R.id.employeeAddressFragmentId, elf);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        ft.addToBackStack(null);
-        ft.commit();
+//        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+//        JobsListFragment elf = new JobsListFragment();
+//        ft.replace(R.id.employeeAddressFragmentId, elf);
+//        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+//        ft.addToBackStack(null);
+//        ft.commit();
         //End
 
         return layout;

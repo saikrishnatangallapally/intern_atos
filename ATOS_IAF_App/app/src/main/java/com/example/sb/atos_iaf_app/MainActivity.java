@@ -4,14 +4,12 @@ package com.example.sb.atos_iaf_app;
  */
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements JobsListFragment.EmployeeListFragmentInterface{
 
@@ -24,14 +22,22 @@ public class MainActivity extends AppCompatActivity implements JobsListFragment.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+
+        JobsListFragment jobsListFragment = new JobsListFragment();
+
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.content, jobsListFragment, "Load_JobsListFragment");
+        ft.addToBackStack(null);
+//        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
     }
 
     @Override
@@ -63,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements JobsListFragment.
 
         //Check if the FrameLayout is being used
 
-        View frameLayoutView = findViewById(R.id.employeeListFragmentId);
+        View frameLayoutView = findViewById(R.id.content);
         if(frameLayoutView != null){
             //Create the detail Fragment Object
             CandidateDetailFragment candidateDetailFragment = new CandidateDetailFragment();
@@ -71,9 +77,9 @@ public class MainActivity extends AppCompatActivity implements JobsListFragment.
 
             //Start Fragment Transaction
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.employeeListFragmentId, candidateDetailFragment);
+            ft.replace(R.id.content, candidateDetailFragment, "LOAD_CandidateDetailFragment");
             ft.addToBackStack(null);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+//            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
         }else{
             //Call Detail Activity
