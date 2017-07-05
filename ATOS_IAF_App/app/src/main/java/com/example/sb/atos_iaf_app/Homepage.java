@@ -1,6 +1,7 @@
 package com.example.sb.atos_iaf_app;
 
 import android.os.Bundle;
+import android.os.Message;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,13 +18,19 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.content.Intent;
 import java.util.HashMap;
+import android.widget.ListView;
+import android.widget.ArrayAdapter;
 
 
 public class Homepage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Session session;
-   // Button btnLogout;
+    String[] UpcomingInterviewsArray = {"Interview1: Jobi_d1","Interview2: Jobi_d2","Interview3: Jobi_d1"};
+    String[] AcceptedInterviewsArray = {"Interview1: jobid3","Interwiew1: jobid4"};
+    String[] TodaysInterviewArray = {"Interview2:jobid4"};
+    String[] CompletedInterview = {"interview3:job3","interview:job5",};
+
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -48,8 +55,6 @@ public class Homepage extends AppCompatActivity
        // btnLogout = (Button) findViewById(R.id.logout);
 
         Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
-
-
         /**
          * Call this function whenever you want to check user login
          * This will redirect user to LoginActivity is he is not
@@ -88,7 +93,7 @@ public class Homepage extends AppCompatActivity
         });*/
 
         // create the TabHost that will contain the Tabs
-        TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
+        TabHost tabHost = (TabHost)findViewById(R.id.tabhost);
         tabHost.setup();
 
         TabSpec tab1 = tabHost.newTabSpec("Upcoming Interviews");
@@ -106,11 +111,9 @@ public class Homepage extends AppCompatActivity
         tab2.setIndicator("Accepted Interviews");
         //tab2.setContent(new Intent(this,Tab2Activity.class));
 
-
         tab3.setContent(R.id.tab3);
         tab3.setIndicator("Today's Interviews");
         //tab3.setContent(new Intent(this,Tab3Activity.class));
-
 
         tab4.setContent(R.id.tab4);
         tab4.setIndicator("Completed Interviews");
@@ -121,7 +124,31 @@ public class Homepage extends AppCompatActivity
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
         tabHost.addTab(tab4);
-    }
+
+
+            ArrayAdapter adapter1 = new ArrayAdapter<String>(this,
+                    R.layout.content_third_listup, UpcomingInterviewsArray);
+            ListView listView1 = (ListView) findViewById(R.id.UpInterview);
+            listView1.setAdapter(adapter1);
+
+            ArrayAdapter adapter2 = new ArrayAdapter<String>(this,
+                    R.layout.content_third_listacc, AcceptedInterviewsArray);
+            ListView listView2 = (ListView) findViewById(R.id.AccInterview);
+            listView2.setAdapter(adapter2);
+
+            ArrayAdapter adapter3 = new ArrayAdapter<String>(this,
+                    R.layout.content_third_listtod, TodaysInterviewArray);
+            ListView listView3 = (ListView) findViewById(R.id.TodInterview);
+            listView3.setAdapter(adapter3);
+
+            ArrayAdapter adapter4 = new ArrayAdapter<String>(this,
+                    R.layout.content_third_listcom, CompletedInterview);
+            ListView listView4 = (ListView) findViewById(R.id.ComInterview);
+            listView4.setAdapter(adapter4);
+
+
+        }
+
 
     @Override
     public void onBackPressed() {
