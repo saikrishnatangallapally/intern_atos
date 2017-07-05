@@ -237,7 +237,7 @@ public class LoginScreen extends AppCompatActivity implements LoaderCallbacks<Cu
 
                // i.putExtra("UserName",user);
                 session.createLoginSession(user, pass1);
-                Intent thirdPage=new Intent(LoginScreen.this,MainActivity.class);
+                Intent thirdPage=new Intent(LoginScreen.this,Homepage.class);
                 startActivity(thirdPage);
 
             }

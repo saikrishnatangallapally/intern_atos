@@ -10,9 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
+import android.content.Intent;
 import java.util.HashMap;
 
 
@@ -21,7 +24,8 @@ public class Homepage extends AppCompatActivity
 
     Session session;
    // Button btnLogout;
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
         session = new Session(getApplicationContext());
@@ -82,6 +86,41 @@ public class Homepage extends AppCompatActivity
                 session.logoutUser();
             }
         });*/
+
+        // create the TabHost that will contain the Tabs
+        TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
+        tabHost.setup();
+
+        TabSpec tab1 = tabHost.newTabSpec("Upcoming Interviews");
+        TabSpec tab2 = tabHost.newTabSpec("Accepted Interviews");
+        TabSpec tab3 = tabHost.newTabSpec("Today's Interviews");
+        TabSpec tab4 = tabHost.newTabSpec("Completed Interviews");
+
+        // Set the Tab name and Activity
+        // that will be opened when particular Tab will be selected
+        tab1.setContent(R.id.tab1);
+        tab1.setIndicator("Upcoming Interviews");
+        //tab1.setContent(new Intent(this,Tab1Activity.class));
+
+        tab2.setContent(R.id.tab2);
+        tab2.setIndicator("Accepted Interviews");
+        //tab2.setContent(new Intent(this,Tab2Activity.class));
+
+
+        tab3.setContent(R.id.tab3);
+        tab3.setIndicator("Today's Interviews");
+        //tab3.setContent(new Intent(this,Tab3Activity.class));
+
+
+        tab4.setContent(R.id.tab4);
+        tab4.setIndicator("Completed Interviews");
+        //tab4.setContent(new Intent(this,Tab4Activity.class));
+
+        /** Add the tabs  to the TabHost to display. */
+        tabHost.addTab(tab1);
+        tabHost.addTab(tab2);
+        tabHost.addTab(tab3);
+        tabHost.addTab(tab4);
     }
 
     @Override
