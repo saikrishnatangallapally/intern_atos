@@ -1,5 +1,6 @@
 package com.example.sb.atos_iaf_app;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.design.widget.NavigationView;
@@ -22,15 +23,17 @@ import java.util.HashMap;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 
+import static android.graphics.Color.WHITE;
+
 
 public class Homepage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Session session;
-    String[] UpcomingInterviewsArray = {"Interview1: Jobi_d1","Interview2: Jobi_d2","Interview3: Jobi_d1"};
-    String[] AcceptedInterviewsArray = {"Interview1: jobid3","Interwiew1: jobid4"};
-    String[] TodaysInterviewArray = {"Interview2:jobid4"};
-    String[] CompletedInterview = {"interview3:job3","interview:job5",};
+    String UpcomingInterviewsArray[] = {"Interview1: Jobi_d1","Interview2: Jobi_d2","Interview3: Jobi_d1"};
+    String AcceptedInterviewsArray[] = {"Interview1: jobid3","Interwiew1: jobid4"};
+    String TodaysInterviewArray[] = {"Interview2:jobid4"};
+    String CompletedInterview[] = {"interview3:job3","interview:job5",};
 
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -126,26 +129,31 @@ public class Homepage extends AppCompatActivity
         tabHost.addTab(tab3);
         tabHost.addTab(tab4);
 
+       /* for(int i=0;i<tabHost.getTabWidget().getChildCount();i++)
+        {
+            TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(R.id.title);
+            tv.setTextColor(0xffffffff);
+        }*/
 
-            ArrayAdapter adapter1 = new ArrayAdapter<String>(this,
-                    R.layout.content_third_listup, UpcomingInterviewsArray);
             ListView listView1 = (ListView) findViewById(R.id.UpInterview);
+            ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
+                    R.layout.content_third_listup,R.id.listup, UpcomingInterviewsArray);
             listView1.setAdapter(adapter1);
-             //setListAdapter(adapter1)
 
-            ArrayAdapter adapter2 = new ArrayAdapter<String>(this,
-                    R.layout.content_third_listacc, AcceptedInterviewsArray);
-            ListView listView2 = (ListView) findViewById(R.id.AccInterview);
+
+             ListView listView2 = (ListView) findViewById(R.id.AccInterview);
+            ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
+                    R.layout.content_third_listacc,R.id.listacc, AcceptedInterviewsArray);
             listView2.setAdapter(adapter2);
 
-            ArrayAdapter adapter3 = new ArrayAdapter<String>(this,
-                    R.layout.content_third_listtod, TodaysInterviewArray);
             ListView listView3 = (ListView) findViewById(R.id.TodInterview);
+            ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,
+                    R.layout.content_third_listtod,R.id.listtod, TodaysInterviewArray);
             listView3.setAdapter(adapter3);
 
-            ArrayAdapter adapter4 = new ArrayAdapter<String>(this,
-                    R.layout.content_third_listcom, CompletedInterview);
             ListView listView4 = (ListView) findViewById(R.id.ComInterview);
+            ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this,
+                    R.layout.content_third_listcom,R.id.listcom, CompletedInterview);
             listView4.setAdapter(adapter4);
 
 
