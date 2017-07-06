@@ -156,7 +156,6 @@ public class Homepage extends AppCompatActivity
                     R.layout.content_third_listcom,R.id.listcom, CompletedInterview);
             listView4.setAdapter(adapter4);
 
-
         }
 
 
