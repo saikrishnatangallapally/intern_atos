@@ -7,6 +7,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -130,6 +131,7 @@ public class Homepage extends AppCompatActivity
                     R.layout.content_third_listup, UpcomingInterviewsArray);
             ListView listView1 = (ListView) findViewById(R.id.UpInterview);
             listView1.setAdapter(adapter1);
+             //setListAdapter(adapter1)
 
             ArrayAdapter adapter2 = new ArrayAdapter<String>(this,
                     R.layout.content_third_listacc, AcceptedInterviewsArray);
