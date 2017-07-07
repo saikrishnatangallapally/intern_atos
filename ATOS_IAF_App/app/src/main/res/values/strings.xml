@@ -29,4 +29,5 @@
     <string name="title_activity_feedback">Feedback</string>
     <string name="title_jobs_list">Candidates</string>
     <string name="title_jobs_detail">Jobs Detail</string>
+    <string name="title_activity_interview_details">InterviewDetails</string>
 </resources>

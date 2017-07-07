@@ -1,6 +1,7 @@
 package com.example.sb.atos_iaf_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -14,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TabHost;
@@ -246,7 +248,6 @@ public class Homepage extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.third, menu);
         return true;
     }
 
@@ -273,7 +274,8 @@ public class Homepage extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_Homepage) {
-
+            Intent intent = new Intent(this, Homepage.class);
+            startActivity(intent);
             return true;
 
 
@@ -287,15 +289,16 @@ public class Homepage extends AppCompatActivity
            // Intent a=new Intent(this,LoginScreen.class);
            // startActivity(a);
              return true;
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public void onListItemClick(View view)
+    {
+        Intent intent = new Intent(this, InterviewDetails.class);
+        startActivity(intent);
     }
 
 
