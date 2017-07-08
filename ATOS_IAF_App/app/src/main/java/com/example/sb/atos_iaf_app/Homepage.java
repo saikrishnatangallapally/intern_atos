@@ -35,10 +35,10 @@ public class Homepage extends AppCompatActivity
     private Context context;
     DataBaseHelper1 dbhelper;
     Session session;
-   // String UpcomingInterviewsArray[] = {"Interview1: Jobi_d1","Interview2: Jobi_d2","Interview3: Jobi_d1"};
-   // String AcceptedInterviewsArray[] = {"Interview1: jobid3","Interwiew1: jobid4"};
-   // String TodaysInterviewArray[] = {"Interview2:jobid4"};
-   // String CompletedInterview[] = {"interview3:job3","interview:job5",};
+    public static List<String> UpcomingInterviewsArray = new ArrayList<String>();
+    public static List<String> AcceptedInterviewsArray = new ArrayList<String>();
+    public static List<String> TodaysInterviewArray= new ArrayList<String>();
+    public static List<String> CompletedInterview= new ArrayList<String>();
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,11 +143,7 @@ public class Homepage extends AppCompatActivity
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         // Start the transaction.
         db.beginTransaction();
-        List<String> UpcomingInterviewsArray = new ArrayList<String>();
-        List<String> AcceptedInterviewsArray = new ArrayList<String>();
 
-        List<String> TodaysInterviewArray= new ArrayList<String>();
-        List<String> CompletedInterview= new ArrayList<String>();
         try {
 
             // String selectQuery = " SELECT JobID,JobDescription,AppID FROM  jobdetails where Status = ' NO ' " ;
@@ -267,6 +263,7 @@ public class Homepage extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    public static String job_id_clicked;
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -297,6 +294,7 @@ public class Homepage extends AppCompatActivity
     }
     public void onListItemClick(View view)
     {
+        job_id_clicked = ((TextView) view.findViewById(R.id.listup)).getText().toString();
         Intent intent = new Intent(this, InterviewDetails.class);
         startActivity(intent);
     }

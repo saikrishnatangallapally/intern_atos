@@ -157,7 +157,7 @@
             app:layout_constraintLeft_toRightOf="@+id/otherDetails" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/forward"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
@@ -173,7 +173,7 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Reject"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -184,23 +184,23 @@
         android:layout_marginStart="26dp"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/forward"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/button" />
+        app:layout_constraintLeft_toRightOf="@+id/forward" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/schedule"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginStart="16dp"
         android:text="Schedule"
         android:textColor="@android:color/black"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/forward"
+        app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        tools:layout_constraintLeft_creator="1" />
 
 
         <TextView
