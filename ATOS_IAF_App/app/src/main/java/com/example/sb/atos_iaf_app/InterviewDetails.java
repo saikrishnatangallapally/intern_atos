@@ -6,31 +6,38 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sb.atos_iaf_app.Sql.DataBaseHelper1;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class InterviewDetails extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private Context context;
     DataBaseHelper1 dbhelper;
     Session session;
+
+
+    public static List<String> ApplicantID = new ArrayList<String>();
+    public static List<String> Name = new ArrayList<String>();
+    public static List<String> JobID= new ArrayList<String>();
+    public static List<String> Contact= new ArrayList<String>();
+    public static List<String> Address= new ArrayList<String>();
 
 
     @Override
@@ -102,24 +109,29 @@ public class InterviewDetails extends AppCompatActivity
         String status2 = "Accepted";
         String status3="Completed";
         String selstatus;
-        String[] columns = {"JobID", "JobDescription", "AppID","Status"};
+        String[] columns = {"AppID", "Name", "JobID","Phone","Address"};
         String whereclause ;//= "JobID = " + selected ;
 
 
-        Cursor cursor1=db.query("jobdetails",columns,"JobID=?",new String[]{selected},null,null,null);
-        Log.d("DD", "ss1");
-        String JID;
+        Cursor cursor1=db.query("Candidate_details",columns,"JobID=?",new String[]{selected},null,null,null);
+        String JID,Name1,Con,Add;
         String JobDes = null;
         String ApID;
         if (cursor1.getCount() > 0) {
-            Log.d("DD", "ss");
             while (cursor1.moveToNext()) {
                 // Read columns data
-                 JID = cursor1.getString(cursor1.getColumnIndex("JobID"));
-                 JobDes = cursor1.getString(cursor1.getColumnIndex("JobDescription"));
-                 ApID = cursor1.getString(cursor1.getColumnIndex("AppID"));
-                 selstatus = cursor1.getString(cursor1.getColumnIndex("Status"));
-                //Homepage.AcceptedInterviewsArray.add(JID+"  "+JobDes+"  "+ApID);
+                Name1 = cursor1.getString(cursor1.getColumnIndex("Name"));
+                JID = cursor1.getString(cursor1.getColumnIndex("JobID"));
+                ApID = cursor1.getString(cursor1.getColumnIndex("AppID"));
+                Con = cursor1.getString(cursor1.getColumnIndex("Phone"));
+                Add = cursor1.getString(cursor1.getColumnIndex("Address"));
+                Name.add(Name1);
+                ApplicantID.add(ApID);
+                JobID.add(JID);
+                Contact.add(Con);
+                Address.add(Add);
+
+                //Display these Strings
             }
         }
         TextView textView1 = (TextView) findViewById(R.id.jobDes);
