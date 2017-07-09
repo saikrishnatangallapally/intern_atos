@@ -103,6 +103,8 @@ public class InterviewDetails extends AppCompatActivity
             }
         });*/
         String selected = Homepage.job_id_clicked.substring(0, Homepage.job_id_clicked.indexOf(" "));
+        Toast.makeText(context, selected, Toast.LENGTH_LONG).show();
+
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         // Start the transaction.
         db.beginTransaction();
