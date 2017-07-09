@@ -30,57 +30,32 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintVertical_bias="0.0">
 
-
-            <android.support.design.widget.TextInputLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:layout_margin="10dp"
+                android:id="@+id/selname"
+                />
 
-                <EditText
-                    android:id="@+id/Cand_Name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:hint="Name"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </android.support.design.widget.TextInputLayout>
-
-
-            <android.support.design.widget.TextInputLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:layout_margin="10dp"
+                android:id="@+id/selpho"
+                />
 
-                <EditText
-                    android:id="@+id/Cand_Contact"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:hint="Contact"
-                    android:inputType="numberDecimal"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:layout_margin="10dp"
+                android:id="@+id/selemail"
+                />
 
-                <EditText
-                    android:id="@+id/Cand_Email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
 
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
+           <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -118,13 +93,15 @@
                 tools:text="Programming/Software Creation" />
 
 
+            <TableRow
+                android:layout_margin="2dp">
             <RadioGroup
                 android:id="@+id/PROG_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center">
-                <TableRow
-                    android:layout_margin="2dp">
+                android:textAlignment="center"
+                android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/PROG_1"
@@ -161,8 +138,9 @@
                         android:layout_height="wrap_content"
                         android:text="5"
                         android:layout_marginRight="20dp"/>
-                </TableRow>
             </RadioGroup>
+            </TableRow>
+
 
             <TextView
                 android:id="@+id/ANAL"
@@ -175,13 +153,15 @@
                 tools:text="Business Analysis" />
 
 
+            <TableRow
+                android:layout_margin="2dp">
             <RadioGroup
                 android:id="@+id/ANAL_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center">
-                <TableRow
-                    android:layout_margin="2dp">
+                android:textAlignment="center"
+                android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/ANAL_1"
@@ -218,8 +198,9 @@
                         android:layout_height="wrap_content"
                         android:text="5"
                         android:layout_marginRight="20dp"/>
-                </TableRow>
             </RadioGroup>
+                </TableRow>
+
 
             <TextView
                 android:id="@+id/DESN"
@@ -232,13 +213,15 @@
                 tools:text="System Design" />
 
 
+            <TableRow
+                android:layout_margin="2dp">
             <RadioGroup
                 android:id="@+id/DESN_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center">
-                <TableRow
-                    android:layout_margin="2dp">
+                android:textAlignment="center"
+                android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/DESN_1"
@@ -275,8 +258,9 @@
                         android:layout_height="wrap_content"
                         android:text="5"
                         android:layout_marginRight="20dp"/>
-                </TableRow>
             </RadioGroup>
+            </TableRow>
+
 
             <TextView
                 android:id="@+id/TEST"
@@ -289,13 +273,15 @@
                 tools:text="Testing" />
 
 
+            <TableRow
+                android:layout_margin="2dp">
             <RadioGroup
                 android:id="@+id/TEST_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center">
-                <TableRow
-                    android:layout_margin="2dp">
+                android:textAlignment="center"
+                android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/TEST_1"
@@ -332,8 +318,9 @@
                         android:layout_height="wrap_content"
                         android:text="5"
                         android:layout_marginRight="20dp"/>
-                </TableRow>
+
             </RadioGroup>
+            </TableRow>
 
             <TextView
                 android:id="@+id/DBDS"
@@ -346,13 +333,15 @@
                 tools:text="Database Design" />
 
 
+            <TableRow
+                android:layout_margin="2dp">
             <RadioGroup
                 android:id="@+id/DBDS_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center">
-                <TableRow
-                    android:layout_margin="2dp">
+                android:textAlignment="center"
+                android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/DBDS_1"
@@ -389,8 +378,9 @@
                         android:layout_height="wrap_content"
                         android:text="5"
                         android:layout_marginRight="20dp"/>
-                </TableRow>
+
             </RadioGroup>
+            </TableRow>
 
             <TextView
                 android:id="@+id/AT"
@@ -403,13 +393,15 @@
                 tools:text="Analytical Thinking" />
 
 
+            <TableRow
+                android:layout_margin="2dp">
             <RadioGroup
                 android:id="@+id/AT_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center">
-                <TableRow
-                    android:layout_margin="2dp">
+                android:textAlignment="center"
+                android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/AT_1"
@@ -446,8 +438,9 @@
                         android:layout_height="wrap_content"
                         android:text="5"
                         android:layout_marginRight="20dp"/>
-                </TableRow>
+
             </RadioGroup>
+            </TableRow>
 
             <TextView
                 android:id="@+id/CT"
@@ -460,13 +453,15 @@
                 tools:text="Conceptual Thinking" />
 
 
+            <TableRow
+                android:layout_margin="2dp">
             <RadioGroup
                 android:id="@+id/CT_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center">
-                <TableRow
-                    android:layout_margin="2dp">
+                android:textAlignment="center"
+                android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/CT_1"
@@ -503,8 +498,9 @@
                         android:layout_height="wrap_content"
                         android:text="5"
                         android:layout_marginRight="20dp"/>
-                </TableRow>
+
             </RadioGroup>
+            </TableRow>
 
             <TextView
                 android:id="@+id/IA"
@@ -517,13 +513,15 @@
                 tools:text="Information Acquisation" />
 
 
+            <TableRow
+                android:layout_margin="2dp">
             <RadioGroup
                 android:id="@+id/IA_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center">
-                <TableRow
-                    android:layout_margin="2dp">
+                android:textAlignment="center"
+                android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/IA_1"
@@ -560,8 +558,9 @@
                         android:layout_height="wrap_content"
                         android:text="5"
                         android:layout_marginRight="20dp"/>
-                </TableRow>
+
             </RadioGroup>
+            </TableRow>
 
             <Button
                 android:id="@+id/btnSubmit"
@@ -569,6 +568,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="30dp"
                 android:text="SUBMIT"
                 android:textStyle="bold" />
 

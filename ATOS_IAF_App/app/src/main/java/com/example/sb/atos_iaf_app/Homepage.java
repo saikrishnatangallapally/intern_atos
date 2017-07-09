@@ -38,8 +38,9 @@ public class Homepage extends AppCompatActivity
     Session session;
     public static List<String> UpcomingInterviewsArray = new ArrayList<String>();
     public static List<String> AcceptedInterviewsArray = new ArrayList<String>();
-    public static List<String> TodaysInterviewArray= new ArrayList<String>();
+   // public static List<String> TodaysInterviewArray= new ArrayList<String>();
     public static List<String> CompletedInterview= new ArrayList<String>();
+    public static String acc_string;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +110,7 @@ public class Homepage extends AppCompatActivity
 
         TabSpec tab1 = tabHost.newTabSpec("Upcoming Interviews");
         TabSpec tab2 = tabHost.newTabSpec("Accepted Interviews");
-        TabSpec tab3 = tabHost.newTabSpec("Today's Interviews");
+       // TabSpec tab3 = tabHost.newTabSpec("Today's Interviews");
         TabSpec tab4 = tabHost.newTabSpec("Completed Interviews");
 
         // Set the Tab name and Activity
@@ -122,8 +123,8 @@ public class Homepage extends AppCompatActivity
         tab2.setIndicator("Accepted Interviews");
         //tab2.setContent(new Intent(this,Tab2Activity.class));
 
-        tab3.setContent(R.id.tab3);
-        tab3.setIndicator("Today's Interviews");
+       // tab3.setContent(R.id.tab3);
+        //tab3.setIndicator("Today's Interviews");
         //tab3.setContent(new Intent(this,Tab3Activity.class));
 
         tab4.setContent(R.id.tab4);
@@ -133,7 +134,7 @@ public class Homepage extends AppCompatActivity
         /** Add the tabs  to the TabHost to display. */
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
-        tabHost.addTab(tab3);
+        //tabHost.addTab(tab3);
         tabHost.addTab(tab4);
 
        /* for(int i=0;i<tabHost.getTabWidget().getChildCount();i++)
@@ -146,7 +147,7 @@ public class Homepage extends AppCompatActivity
         db.beginTransaction();
         UpcomingInterviewsArray.clear();
         AcceptedInterviewsArray.clear();
-        TodaysInterviewArray.clear();
+        //TodaysInterviewArray.clear();
         CompletedInterview.clear();
 
 
@@ -320,6 +321,7 @@ public class Homepage extends AppCompatActivity
     }
     public void onAccItemClick(View view)
     {
+        acc_string = ((TextView) view.findViewById(R.id.listacc)).getText().toString();
         Intent intent = new Intent(this, FeedbackForm.class);
         startActivity(intent);
     }

@@ -23,6 +23,7 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
     private SQLiteDatabase myDataBase;
 
     private final Context myContext;
+    public static int databaseversion=1;
 
     /**
      * Constructor
@@ -31,7 +32,7 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
      */
     public DataBaseHelper1(Context context) {
 
-        super(context, DB_NAME, null, 1);
+        super(context, DB_NAME, null,databaseversion);
         this.myContext = context;
         int c;
         try{
@@ -155,6 +156,7 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
 
     }
 

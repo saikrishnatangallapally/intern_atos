@@ -115,7 +115,7 @@ public class InterviewDetails extends AppCompatActivity
 
 
         Cursor cursor1 = db.query("Candidate_details", columns, "JobID=?", new String[]{selected}, null, null, null);
-        String JID, Name1 = null, Con = null, Add = null;
+        String JID=null, Name1 = null, Con = null, Add = null;
         String JobDes = null;
         String ApID = null;
         if (cursor1.getCount() > 0) {
@@ -144,7 +144,7 @@ public class InterviewDetails extends AppCompatActivity
         TextView txtcontactNO = (TextView) findViewById(R.id.contactNO);
         txtcontactNO.setText("Contact:           " + Con);
         TextView textView1 = (TextView) findViewById(R.id.jobid);
-        textView1.setText("JobID:             " + JobDes);
+        textView1.setText("JobID:             " + JID);
         TextView txtCon = (TextView) findViewById(R.id.add);
         txtCon.setText("Address+           " + Add);
         Button schedule = (Button) findViewById(R.id.schedule);
@@ -166,7 +166,7 @@ public class InterviewDetails extends AppCompatActivity
                 Log.d("akshitha", "DSdds");
                 mon = c.get(Calendar.MONTH);
                 year = c.get(Calendar.YEAR);
-                Toast.makeText(context, "Scheduled your Interview1", Toast.LENGTH_LONG).show();
+               // Toast.makeText(context, "Scheduled your Interview1", Toast.LENGTH_LONG).show();
                 DatePickerDialog Dialog;
                 Dialog = new DatePickerDialog(InterviewDetails.this,android.R.style.Theme_Holo_Dialog_MinWidth, mdate, year, mon, day);
                 Dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -197,12 +197,12 @@ public class InterviewDetails extends AppCompatActivity
         Log.d("akshitha","DSdds");
         mon=c.get(Calendar.MONTH);
         year=c.get(Calendar.YEAR);
-        Toast.makeText(context, "Scheduled your Interview1", Toast.LENGTH_LONG).show();
+       // Toast.makeText(context, "Scheduled your Interview1", Toast.LENGTH_LONG).show();
         DatePickerDialog dataPickerDialog=new DatePickerDialog(this,new DatePickerDialog.OnDateSetListener()
         {
             public void onDateSet(DatePicker view, int year, int moy, int doy){
                 date1.setText(doy+"/"+(moy+1)+"/"+year);
-                Toast.makeText(context, "Scheduled your Interview2", Toast.LENGTH_LONG).show();
+               // Toast.makeText(context, "Scheduled your Interview2", Toast.LENGTH_LONG).show();
             }
         },day,mon,year);
     }
@@ -210,12 +210,16 @@ public class InterviewDetails extends AppCompatActivity
 
     private void onScheduleClick() {
         ContentValues cv = new ContentValues();
-        String sel = Homepage.job_id_clicked;
-        cv.put("status", "Accepted");
+        String sel = Homepage.job_id_clicked.substring(0, Homepage.job_id_clicked.indexOf(" "));
+       /// String query="update jobdetails set status='Accepted' where jobid ='" +sel+ "';";
+
+       cv.put("status", "Accepted");
         dbhelper = new DataBaseHelper1(context);
-        SQLiteDatabase my = dbhelper.getReadableDatabase();
+        SQLiteDatabase my = dbhelper.getWritableDatabase();
         my.beginTransaction();
         my.update("jobdetails", cv, "jobid=?", new String[]{sel});
+        DataBaseHelper1.databaseversion=my.getVersion();
+       // my.execSQL(query);
         Toast.makeText(context, "Scheduled your Interview", Toast.LENGTH_LONG).show();
         my.endTransaction();
         dbhelper.close();
