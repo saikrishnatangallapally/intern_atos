@@ -40,6 +40,8 @@ public class InterviewDetails extends AppCompatActivity
     public static List<String> Address= new ArrayList<String>();
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,26 +116,36 @@ public class InterviewDetails extends AppCompatActivity
 
 
         Cursor cursor1=db.query("Candidate_details",columns,"JobID=?",new String[]{selected},null,null,null);
-        String JID,Name1,Con,Add;
+        String JID,Name1 =null,Con=null,Add = null;
         String JobDes = null;
-        String ApID;
+        String ApID = null;
         if (cursor1.getCount() > 0) {
-            while (cursor1.moveToNext()) {
+           while (cursor1.moveToNext()) {
                 // Read columns data
                 Name1 = cursor1.getString(cursor1.getColumnIndex("Name"));
                 JID = cursor1.getString(cursor1.getColumnIndex("JobID"));
                 ApID = cursor1.getString(cursor1.getColumnIndex("AppID"));
                 Con = cursor1.getString(cursor1.getColumnIndex("Phone"));
                 Add = cursor1.getString(cursor1.getColumnIndex("Address"));
-                Name.add(Name1);
-                ApplicantID.add(ApID);
-                JobID.add(JID);
-                Contact.add(Con);
-                Address.add(Add);
+               // Name.add(Name1);
+               // ApplicantID.add(ApID);
+               // JobID.add(JID);
+               // Contact.add(Con);
+               // Address.add(Add);
 
                 //Display these Strings
+
+
             }
         }
+        TextView txtcandID = (TextView) findViewById(R.id.candID);
+        txtcandID.setText(ApID);
+        TextView txtcandName = (TextView) findViewById(R.id.candName);
+        txtcandName.setText(Name1);
+        TextView txtcontactNO = (TextView) findViewById(R.id.contactNO);
+        txtcontactNO.setText(Con);
+        TextView txtCon = (TextView) findViewById(R.id.contactNO);
+        txtCon.setText(Con);
         TextView textView1 = (TextView) findViewById(R.id.jobDes);
         textView1.setText(JobDes);
         Button  schedule  = (Button) findViewById(R.id.schedule);
