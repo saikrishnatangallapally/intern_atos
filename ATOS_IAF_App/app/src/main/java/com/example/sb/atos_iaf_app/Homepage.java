@@ -144,6 +144,11 @@ public class Homepage extends AppCompatActivity
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         // Start the transaction.
         db.beginTransaction();
+        UpcomingInterviewsArray.clear();
+        AcceptedInterviewsArray.clear();
+        TodaysInterviewArray.clear();
+        CompletedInterview.clear();
+
 
         try {
 
@@ -209,6 +214,7 @@ public class Homepage extends AppCompatActivity
 
             ListView listView1;
         listView1 = (ListView) findViewById(R.id.UpInterview);
+       // listView1.setAdapter(null);
             ArrayAdapter<String> adapter1;
         adapter1= new ArrayAdapter<>(this,
                 R.layout.content_third_listup, R.id.listup, UpcomingInterviewsArray);
@@ -219,6 +225,7 @@ public class Homepage extends AppCompatActivity
 
 
             ListView listView2 = (ListView) findViewById(R.id.AccInterview);
+
             ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
                     R.layout.content_third_listacc,R.id.listacc, AcceptedInterviewsArray);
             listView2.setAdapter(adapter2);
@@ -229,6 +236,7 @@ public class Homepage extends AppCompatActivity
             listView3.setAdapter(adapter3);
 */
             ListView listView4 = (ListView) findViewById(R.id.ComInterview);
+        listView4.setAdapter(null);
             ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this,
                     R.layout.content_third_listcom,R.id.listcom, CompletedInterview);
             listView4.setAdapter(adapter4);
