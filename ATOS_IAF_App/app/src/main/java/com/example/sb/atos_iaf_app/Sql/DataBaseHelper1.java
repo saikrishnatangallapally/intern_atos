@@ -33,11 +33,13 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
 
         super(context, DB_NAME, null, 1);
         this.myContext = context;
+        int c;
         try{
             String myPath = DB_PATH + DB_NAME; // also check the extension of you db file
             File dbfile = new File(myPath);
             if( dbfile.exists())
-                Toast.makeText(context, "database exists", Toast.LENGTH_LONG).show();
+                c=1;
+                //Toast.makeText(context, "database exists", Toast.LENGTH_LONG).show();
             else
                 Toast.makeText(context, "cant find database", Toast.LENGTH_LONG).show();
         }

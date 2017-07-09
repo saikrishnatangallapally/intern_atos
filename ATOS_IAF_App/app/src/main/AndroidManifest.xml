@@ -49,6 +49,10 @@
             android:name=".InterviewDetails"
             android:label="@string/title_activity_interview_details"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FeedbackForm"
+            android:label="@string/title_activity_feedback_form"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

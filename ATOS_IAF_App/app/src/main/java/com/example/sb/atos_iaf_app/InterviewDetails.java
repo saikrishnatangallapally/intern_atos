@@ -57,7 +57,7 @@ public class InterviewDetails extends AppCompatActivity
         // Button logout
         // btnLogout = (Button) findViewById(R.id.logout);
 
-        Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
         /**
          * Call this function whenever you want to check user login
          * This will redirect user to LoginActivity is he is not

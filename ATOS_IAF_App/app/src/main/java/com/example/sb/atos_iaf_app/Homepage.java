@@ -32,6 +32,7 @@ import java.util.List;
 
 public class Homepage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public int count =0;
     private Context context;
     DataBaseHelper1 dbhelper;
     Session session;
@@ -206,10 +207,15 @@ public class Homepage extends AppCompatActivity
                     // Close database
         }
 
-            ListView listView1 = (ListView) findViewById(R.id.UpInterview);
-            ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
-                    R.layout.content_third_listup,R.id.listup, UpcomingInterviewsArray);
-            listView1.setAdapter(adapter1);
+            ListView listView1;
+        listView1 = (ListView) findViewById(R.id.UpInterview);
+            ArrayAdapter<String> adapter1;
+        adapter1= new ArrayAdapter<>(this,
+                R.layout.content_third_listup, R.id.listup, UpcomingInterviewsArray);
+        listView1.setAdapter(adapter1);
+
+
+
 
 
             ListView listView2 = (ListView) findViewById(R.id.AccInterview);
@@ -227,7 +233,10 @@ public class Homepage extends AppCompatActivity
                     R.layout.content_third_listcom,R.id.listcom, CompletedInterview);
             listView4.setAdapter(adapter4);
 
-    }
+
+        }
+
+
 
 
 
@@ -271,8 +280,11 @@ public class Homepage extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_Homepage) {
+            count = count + 1;
             Intent intent = new Intent(this, Homepage.class);
             startActivity(intent);
+
+
             return true;
 
 
@@ -296,6 +308,11 @@ public class Homepage extends AppCompatActivity
     {
         job_id_clicked = ((TextView) view.findViewById(R.id.listup)).getText().toString();
         Intent intent = new Intent(this, InterviewDetails.class);
+        startActivity(intent);
+    }
+    public void onAccItemClick(View view)
+    {
+        Intent intent = new Intent(this, FeedbackForm.class);
         startActivity(intent);
     }
 
