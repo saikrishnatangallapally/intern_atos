@@ -103,6 +103,8 @@ public class InterviewDetails extends AppCompatActivity
             }
         });*/
         String selected = Homepage.job_id_clicked.substring(0, Homepage.job_id_clicked.indexOf(" "));
+        Toast.makeText(context, selected, Toast.LENGTH_LONG).show();
+
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         // Start the transaction.
         db.beginTransaction();
@@ -115,7 +117,7 @@ public class InterviewDetails extends AppCompatActivity
 
 
         Cursor cursor1 = db.query("Candidate_details", columns, "JobID=?", new String[]{selected}, null, null, null);
-        String JID, Name1 = null, Con = null, Add = null;
+        String JID=null, Name1 = null, Con = null, Add = null;
         String JobDes = null;
         String ApID = null;
         if (cursor1.getCount() > 0) {
@@ -144,7 +146,7 @@ public class InterviewDetails extends AppCompatActivity
         TextView txtcontactNO = (TextView) findViewById(R.id.contactNO);
         txtcontactNO.setText("Contact:           " + Con);
         TextView textView1 = (TextView) findViewById(R.id.jobid);
-        textView1.setText("JobID:             " + JobDes);
+        textView1.setText("JobID:             " + JID);
         TextView txtCon = (TextView) findViewById(R.id.add);
         txtCon.setText("Address+           " + Add);
         Button schedule = (Button) findViewById(R.id.schedule);
