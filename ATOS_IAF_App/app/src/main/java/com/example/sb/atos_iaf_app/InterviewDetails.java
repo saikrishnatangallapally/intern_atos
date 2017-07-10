@@ -102,7 +102,7 @@ public class InterviewDetails extends AppCompatActivity
                 session.logoutUser();
             }
         });*/
-        String selected = Homepage.job_id_clicked.substring(0, Homepage.job_id_clicked.indexOf(" "));
+        String selected = Homepage.app_id_clicked.substring(0, Homepage.app_id_clicked.indexOf(" "));
         Toast.makeText(context, selected, Toast.LENGTH_LONG).show();
 
         SQLiteDatabase db = dbhelper.getReadableDatabase();
@@ -116,21 +116,21 @@ public class InterviewDetails extends AppCompatActivity
         String whereclause;//= "JobID = " + selected ;
 
 
-        Cursor cursor1 = db.query("Candidate_details", columns, "JobID=?", new String[]{selected}, null, null, null);
-        String JID=null, Name1 = null, Con = null, Add = null;
+        Cursor cursor1 = db.query("Candidate_details", columns, "AppID=?", new String[]{selected}, null, null, null);
+        String ApID =null, Name1 = null, Con = null, Add = null;
         String JobDes = null;
-        String ApID = null;
+        String JID = null;
         if (cursor1.getCount() > 0) {
             while (cursor1.moveToNext()) {
                 // Read columns data
                 Name1 = cursor1.getString(cursor1.getColumnIndex("Name"));
-                JID = cursor1.getString(cursor1.getColumnIndex("JobID"));
                 ApID = cursor1.getString(cursor1.getColumnIndex("AppID"));
+                JID = cursor1.getString(cursor1.getColumnIndex("JobID"));
                 Con = cursor1.getString(cursor1.getColumnIndex("Phone"));
                 Add = cursor1.getString(cursor1.getColumnIndex("Address"));
                 // Name.add(Name1);
                 // ApplicantID.add(ApID);
-                // JobID.add(JID);
+                // JobID.add(ApID);
                 // Contact.add(Con);
                 // Address.add(Add);
 
@@ -139,16 +139,16 @@ public class InterviewDetails extends AppCompatActivity
 
             }
         }
-        TextView txtcandID = (TextView) findViewById(R.id.candID);
-        txtcandID.setText("ApplicantID:       " + ApID);
+        TextView txtcandID = (TextView) findViewById(R.id.jobid);
+        txtcandID.setText("Job ID:                   " + JID);
         TextView txtcandName = (TextView) findViewById(R.id.candName);
-        txtcandName.setText("Name:              " + Name1);
+        txtcandName.setText("Name:                     " + Name1);
         TextView txtcontactNO = (TextView) findViewById(R.id.contactNO);
-        txtcontactNO.setText("Contact:           " + Con);
-        TextView textView1 = (TextView) findViewById(R.id.jobid);
-        textView1.setText("JobID:             " + JID);
+        txtcontactNO.setText("Contact:                  " + Con);
+        TextView textView1 = (TextView) findViewById(R.id.candID);
+        textView1.setText("Applicant ID:             " + ApID);
         TextView txtCon = (TextView) findViewById(R.id.add);
-        txtCon.setText("Address+           " + Add);
+        txtCon.setText("Address:                  " + Add);
         Button schedule = (Button) findViewById(R.id.schedule);
         schedule.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -212,7 +212,7 @@ public class InterviewDetails extends AppCompatActivity
 
     private void onScheduleClick() {
         ContentValues cv = new ContentValues();
-        String sel = Homepage.job_id_clicked.substring(0, Homepage.job_id_clicked.indexOf(" "));
+        String sel = Homepage.app_id_clicked.substring(0, Homepage.app_id_clicked.indexOf(" "));
        /// String query="update jobdetails set status='Accepted' where jobid ='" +sel+ "';";
 
        cv.put("status", "Accepted");

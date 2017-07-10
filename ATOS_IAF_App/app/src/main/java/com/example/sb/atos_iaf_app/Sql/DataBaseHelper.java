@@ -136,6 +136,18 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     }
 
+    private void copyBack() throws IOException
+    {
+        //Open your local db as the input stream
+        InputStream myInput = myContext.getAssets().open(DB_NAME);
+
+        // Path to the just created empty db
+        String outFileName = DB_PATH + DB_NAME;
+
+        //Open the empty db as the output stream
+        OutputStream myOutput = new FileOutputStream(outFileName);
+    }
+
     public void openDataBase() throws SQLException {
 
         //Open the database

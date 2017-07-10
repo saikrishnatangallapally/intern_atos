@@ -157,7 +157,7 @@ public class Homepage extends AppCompatActivity
             String status1 = "NO";
             String status2 = "Accepted";
             String status3="Completed";
-            String[] columns = {"JobID", "JobDescription", "AppID"};
+            String[] columns = {"AppID", "JobDescription", "JobID"};
            Cursor cursor = db.query("jobdetails", columns, "status=?", new String[]{status1}, null, null, null);
 
             Log.d("DD", "ss1");
@@ -168,7 +168,7 @@ public class Homepage extends AppCompatActivity
                     String JID = cursor.getString(cursor.getColumnIndex("JobID"));
                     String JobDes = cursor.getString(cursor.getColumnIndex("JobDescription"));
                     String ApID = cursor.getString(cursor.getColumnIndex("AppID"));
-                    UpcomingInterviewsArray.add(JID+"  "+JobDes+"  "+ApID);
+                    UpcomingInterviewsArray.add(ApID+"  "+JobDes+"  "+JID);
                 }
 
             }
@@ -281,7 +281,7 @@ public class Homepage extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public static String job_id_clicked;
+    public static String app_id_clicked;
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -315,7 +315,7 @@ public class Homepage extends AppCompatActivity
     }
     public void onListItemClick(View view)
     {
-        job_id_clicked = ((TextView) view.findViewById(R.id.listup)).getText().toString();
+        app_id_clicked = ((TextView) view.findViewById(R.id.listup)).getText().toString();
         Intent intent = new Intent(this, InterviewDetails.class);
         startActivity(intent);
     }
