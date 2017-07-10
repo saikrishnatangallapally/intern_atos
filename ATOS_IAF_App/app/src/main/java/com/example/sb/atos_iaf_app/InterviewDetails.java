@@ -22,6 +22,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -77,12 +79,12 @@ public class InterviewDetails extends AppCompatActivity
         HashMap<String, String> user = session.getUserDetails();
 
         // name
-        String name = user.get(Session.KEY_NAME);
+        String email = user.get(Session.KEY_NAME);
 
         // email
-        Log.d("user", name);
+        Log.d("user", email);
         String password = user.get(Session.KEY_PASSWORD);
-        System.out.print(name);
+        System.out.print(email);
 
         // displaying user data
         // lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
@@ -113,7 +115,7 @@ public class InterviewDetails extends AppCompatActivity
         String status3 = "Completed";
         String selstatus;
         String[] columns = {"AppID", "Name", "JobID", "Phone", "Address"};
-        String whereclause;//= "JobID = " + selected ;
+       // String whereclause;//= "JobID = " + selected ;
 
 
         Cursor cursor1 = db.query("Candidate_details", columns, "AppID=?", new String[]{selected}, null, null, null);
@@ -211,15 +213,93 @@ public class InterviewDetails extends AppCompatActivity
 
 
     private void onScheduleClick() {
-        ContentValues cv = new ContentValues();
+        RadioGroup rdgrp;
+        RadioButton selectedRadioButton;
+        String date3=date1.getText().toString();
         String sel = Homepage.app_id_clicked.substring(0, Homepage.app_id_clicked.indexOf(" "));
-       /// String query="update jobdetails set status='Accepted' where jobid ='" +sel+ "';";
-
-       cv.put("status", "Accepted");
+        rdgrp=(RadioGroup)findViewById(R.id.radioGroup);
+        String radiovalue=  ((RadioButton)this.findViewById(rdgrp.getCheckedRadioButtonId())).getText().toString();
+        String slot=radiovalue.substring(0, radiovalue.indexOf(" "));
         dbhelper = new DataBaseHelper1(context);
       // dbhelper.openDataBase();
         SQLiteDatabase my = dbhelper.getWritableDatabase();
+        String[] columns = {"Date","Email"};
+        HashMap<String, String> user = session.getUserDetails();
+        String email = user.get(Session.KEY_NAME);
+        Cursor cursor1 = my.query("slots", columns, "Date=? and Email=?", new String[]{date3,email}, null, null, null);
+        String slot1=null,slot2=null,slot3=null,checkslot=null;
+        if (cursor1.getCount() > 0) {
+            while (cursor1.moveToNext()) {
+                // Read columns data
+                if(slot.equals("10")) {
+                    checkslot = cursor1.getString(cursor1.getColumnIndex("Slot1"));
+                    if(checkslot.equals("True"))
+                    {
+                        Toast.makeText(getApplicationContext(),"Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
+                    }
+                }
+                else if(slot.equals("12")) {
+                    checkslot = cursor1.getString(cursor1.getColumnIndex("Slot2"));
+                    if(checkslot.equals("True"))
+                    {
+                        Toast.makeText(getApplicationContext(),"Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
+                    }
+                }
+                else if(slot.equals("2")) {
+                    checkslot = cursor1.getString(cursor1.getColumnIndex("Slot3"));
+                    if(checkslot.equals("True"))
+                    {
+                        Toast.makeText(getApplicationContext(),"Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
+                    }
+                }
+
+
+            }
+        }
+        else
+        {
+           // ContentValues contentValues = new ContentValues();
+
+            //contentValues.put("Email",email);
+            //contentValues.put("Date",date3);
+            if(slot.equals("10"))
+            {
+               // contentValues.put("Slot1","True");
+                //contentValues.put("Slot2","False");
+                //contentValues.put("Slot3","False");
+                slot1="True";
+                slot2="False";
+                slot3="False";
+
+            }
+            else if(slot.equals("12"))
+            {
+                //contentValues.put("Slot1","False");
+                //contentValues.put("Slot2","True");
+                //contentValues.put("Slot3","False");
+                slot1="False";
+                slot2="True";
+                slot3="False";
+            }
+            else if(slot.equals("2"))
+            {
+                //contentValues.put("Slot1","False");
+                //contentValues.put("Slot2","False");
+             //   contentValues.put("Slot3","True");
+                slot1="False";
+                slot2="False";
+                slot3="True";
+
+            }
+            //contentValues.put("AppID",sel);
+            //my.insert("slots",null ,contentValues);
+            String query = "INSERT INTO slots (Email,Date,Slot1,Slot2,Slot3,AppID) VALUES('"+email+"', '"+date3+"', '"+slot1+"', '"+slot2+"', '"+slot3+"', '"+sel+"');";
+            my.execSQL(query);
+            Toast.makeText(getApplicationContext(),"Saved Successfully", Toast.LENGTH_LONG).show();
+        }
        // my.beginTransaction();
+        ContentValues cv = new ContentValues();
+        cv.put("status", "Accepted");
         int row =  my.update("jobdetails", cv, "jobid=?", new String[]{sel});
       //  DataBaseHelper1.databaseversion=my.getVersion();
        // my.execSQL(query);
