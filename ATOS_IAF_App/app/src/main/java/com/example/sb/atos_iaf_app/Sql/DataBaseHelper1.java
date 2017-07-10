@@ -165,6 +165,9 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
 
     }
 
+    public SQLiteDatabase getDataBase() {
+        return myDataBase;
+    }
     // Add your public helper methods to access and get description from the database.
     // You could return cursors by doing "return myDataBase.query(....)" so it'd be easy
     // to you to create adapters for your views.

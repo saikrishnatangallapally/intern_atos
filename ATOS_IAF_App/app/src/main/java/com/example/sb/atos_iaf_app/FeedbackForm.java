@@ -100,7 +100,7 @@ public class FeedbackForm extends AppCompatActivity
     {
       dbhelper=new DataBaseHelper1(this);
         SQLiteDatabase ds=dbhelper.getWritableDatabase();
-        ds.beginTransaction();
+
         EditText txt=(EditText)findViewById(R.id.Cand_RequirementType);
         String typo=txt.getText().toString();
         RadioGroup rgp1=(RadioGroup)findViewById(R.id.PROG_radio);
@@ -115,9 +115,8 @@ public class FeedbackForm extends AppCompatActivity
         ds.insertOrThrow("Feedback","",cv);
         ContentValues cv1=new ContentValues();
         cv1.put("status","completed");
-        ds.update("jobdetails",cv1,"jobid=?", new String[]{sel});
+       int row= ds.update("jobdetails",cv1,"jobid=?", new String[]{sel});
         DataBaseHelper1.databaseversion=ds.getVersion();
-        ds.endTransaction();
         dbhelper.close();
         Toast.makeText(context, "Submitted your Feedback", Toast.LENGTH_LONG).show();
 

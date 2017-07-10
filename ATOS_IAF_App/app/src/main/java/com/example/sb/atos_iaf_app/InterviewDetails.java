@@ -217,13 +217,15 @@ public class InterviewDetails extends AppCompatActivity
 
        cv.put("status", "Accepted");
         dbhelper = new DataBaseHelper1(context);
+      // dbhelper.openDataBase();
         SQLiteDatabase my = dbhelper.getWritableDatabase();
-        my.beginTransaction();
-        my.update("jobdetails", cv, "jobid=?", new String[]{sel});
-        DataBaseHelper1.databaseversion=my.getVersion();
+       // my.beginTransaction();
+        int row =  my.update("jobdetails", cv, "jobid=?", new String[]{sel});
+      //  DataBaseHelper1.databaseversion=my.getVersion();
        // my.execSQL(query);
+        Log.v("Row No", row + "");
         Toast.makeText(context, "Scheduled your Interview", Toast.LENGTH_LONG).show();
-        my.endTransaction();
+    //    my.endTransaction();
         dbhelper.close();
 
     }
