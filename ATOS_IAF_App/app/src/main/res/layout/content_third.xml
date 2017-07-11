@@ -91,24 +91,6 @@
 
                     </LinearLayout>
 
-                    <!--<LinearLayout
-                        android:id="@+id/tab3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ListView
-                            android:id="@+id/TodInterview"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:divider="@color/material_blue_grey_800"
-                            android:dividerHeight="1dp"
-                            android:contextClickable="true">
-
-                        </ListView>
-
-
-                    </LinearLayout>-->
 
                     <LinearLayout
                         android:id="@+id/tab4"

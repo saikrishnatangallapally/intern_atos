@@ -4,15 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listcom"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:onClick="onFeedItemClick"
         android:padding="@dimen/activity_horizontal_margin"
-        android:textSize="@dimen/activity_horizontal_margin"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimary" >
-    </TextView>
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/activity_horizontal_margin"></TextView>
 </LinearLayout>

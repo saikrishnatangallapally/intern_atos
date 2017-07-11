@@ -296,7 +296,7 @@ public class Homepage extends AppCompatActivity
 
 
         } else if (id == R.id.nav_Feedback) {
-             //Intent fed=new Intent(this,Feedback.class);
+
              //startActivity(fed);
              return true;
 
@@ -322,6 +322,11 @@ public class Homepage extends AppCompatActivity
     {
         acc_string = ((TextView) view.findViewById(R.id.listacc)).getText().toString();
         Intent intent = new Intent(this, FeedbackForm.class);
+        startActivity(intent);
+    }
+    public void onFeedItemClick(View view)
+    {
+        Intent intent = new Intent(this, CompletedFeedbackForm.class);
         startActivity(intent);
     }
 

@@ -145,7 +145,6 @@ public class FeedbackForm extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.feedback_form, menu);
         return true;
     }
 
@@ -177,7 +176,7 @@ public class FeedbackForm extends AppCompatActivity
 
 
         } else if (id == R.id.nav_Feedback) {
-            //Intent fed=new Intent(this,Feedback.class);
+
             //startActivity(fed);
             return true;
 
