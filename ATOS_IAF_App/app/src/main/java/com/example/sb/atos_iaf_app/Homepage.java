@@ -40,7 +40,7 @@ public class Homepage extends AppCompatActivity
     public static List<String> AcceptedInterviewsArray = new ArrayList<String>();
     public static List<String> CompletedInterview= new ArrayList<String>();
     public static String acc_string;
-
+    public static String comp_string;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -190,9 +190,9 @@ public class Homepage extends AppCompatActivity
                 Log.d("DD", "ss");
                 while (cursor2.moveToNext()) {
                     // Read columns data
-                    String JID = cursor2.getString(cursor1.getColumnIndex("JobID"));
-                    String JobDes = cursor2.getString(cursor1.getColumnIndex("JobDescription"));
-                    String ApID = cursor2.getString(cursor1.getColumnIndex("AppID"));
+                    String JID = cursor2.getString(cursor2.getColumnIndex("JobID"));
+                    String JobDes = cursor2.getString(cursor2.getColumnIndex("JobDescription"));
+                    String ApID = cursor2.getString(cursor2.getColumnIndex("AppID"));
                     CompletedInterview.add(JID+"  "+JobDes+"  "+ApID);
                 }
 
@@ -326,6 +326,7 @@ public class Homepage extends AppCompatActivity
     }
     public void onFeedItemClick(View view)
     {
+        comp_string  = ((TextView) view.findViewById(R.id.listcom)).getText().toString();
         Intent intent = new Intent(this, CompletedFeedbackForm.class);
         startActivity(intent);
     }

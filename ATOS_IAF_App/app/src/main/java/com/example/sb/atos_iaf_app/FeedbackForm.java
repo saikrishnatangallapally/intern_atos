@@ -105,26 +105,65 @@ public class FeedbackForm extends AppCompatActivity
         String typo = txt.getText().toString();
         RadioGroup rgp1 = (RadioGroup) findViewById(R.id.PROG_radio);
         int selid1 = rgp1.getCheckedRadioButtonId();
+        RadioGroup rgp2 = (RadioGroup) findViewById(R.id.ANAL_radio);
+        int selid2 = rgp2.getCheckedRadioButtonId();
+        RadioGroup rgp3 = (RadioGroup) findViewById(R.id.DESN_radio);
+        int selid3 = rgp3.getCheckedRadioButtonId();
+        RadioGroup rgp4 = (RadioGroup) findViewById(R.id.TEST_radio);
+        int selid4 = rgp4.getCheckedRadioButtonId();
+        RadioGroup rgp5 = (RadioGroup) findViewById(R.id.DBDS_radio);
+        int selid5 = rgp5.getCheckedRadioButtonId();
+        RadioGroup rgp6 = (RadioGroup) findViewById(R.id.AT_radio);
+        int selid6 = rgp6.getCheckedRadioButtonId();
+        RadioGroup rgp7 = (RadioGroup) findViewById(R.id.CT_radio);
+        int selid7 = rgp7.getCheckedRadioButtonId();
+        RadioGroup rgp8 = (RadioGroup) findViewById(R.id.AT_radio);
+        int selid8 = rgp8.getCheckedRadioButtonId();
 
-        if(Name1==null||contact==null||email==null||typo==null||selid1==-1)
+
+        if(Name1==null||contact==null||email==null||typo==null||selid1==-1||selid2==-1||selid3==-1||selid4==-1||selid5==-1||selid6==-1||selid7==-1||selid8==-1)
         {
             Toast.makeText(context, "Please enter  all the values", Toast.LENGTH_LONG).show();
         }
         else {
-            RadioButton rbpro = (RadioButton) findViewById(selid1);
-            String rbproval = (String) rbpro.getText();
+            RadioButton rbpro1 = (RadioButton) findViewById(selid1);
+            String rbproval1 = (String) rbpro1.getText();
+            RadioButton rbpro2 = (RadioButton) findViewById(selid2);
+            String rbproval2 = (String) rbpro2.getText();
+            RadioButton rbpro3 = (RadioButton) findViewById(selid3);
+            String rbproval3 = (String) rbpro3.getText();
+            RadioButton rbpro4 = (RadioButton) findViewById(selid4);
+            String rbproval4 = (String) rbpro4.getText();
+            RadioButton rbpro5 = (RadioButton) findViewById(selid5);
+            String rbproval5 = (String) rbpro5.getText();
+            RadioButton rbpro6 = (RadioButton) findViewById(selid6);
+            String rbproval6 = (String) rbpro6.getText();
+            RadioButton rbpro7 = (RadioButton) findViewById(selid7);
+            String rbproval7 = (String) rbpro7.getText();
+            RadioButton rbpro8 = (RadioButton) findViewById(selid8);
+            String rbproval8 = (String) rbpro8.getText();
+
             ContentValues cv = new ContentValues();
             cv.put("Name", Name1);
             cv.put("Contact", contact);
             cv.put("email", email);
             cv.put("typeofreq", typo);
-            cv.put("prog", rbproval);
+            cv.put("prog", rbproval1);
+            cv.put("anal",rbproval2);
+            cv.put("desn",rbproval3);
+            cv.put("test",rbproval4);
+            cv.put("dbds",rbproval5);
+            cv.put("at",rbproval6);
+            cv.put("ct",rbproval7);
+            cv.put("it",rbproval8);
+            cv.put("JobId",sel);
 
             ds.insertOrThrow("Feedback", "", cv);
             ContentValues cv1 = new ContentValues();
             cv1.put("status", "Completed");
             int row = ds.update("jobdetails", cv1, "jobid=?", new String[]{sel});
             DataBaseHelper1.databaseversion = ds.getVersion();
+            ds.close();
             dbhelper.close();
             Toast.makeText(context, "Submitted your Feedback", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, Homepage.class);

@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="Email: "
                 android:layout_margin="10dp"
-                android:id="@+id/selmail"
+                android:id="@+id/selmails"
                 />
             <TextView
                 android:layout_width="match_parent"
