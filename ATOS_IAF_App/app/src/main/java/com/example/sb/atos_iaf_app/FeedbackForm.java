@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -96,31 +97,39 @@ public class FeedbackForm extends AppCompatActivity
             }
         });
     }
-    private void onSubmitClick()
-    {
-      dbhelper=new DataBaseHelper1(this);
-        SQLiteDatabase ds=dbhelper.getWritableDatabase();
+    private void onSubmitClick() {
+        dbhelper = new DataBaseHelper1(this);
+        SQLiteDatabase ds = dbhelper.getWritableDatabase();
 
-        EditText txt=(EditText)findViewById(R.id.Cand_RequirementType);
-        String typo=txt.getText().toString();
-        RadioGroup rgp1=(RadioGroup)findViewById(R.id.PROG_radio);
-        int selid1=rgp1.getCheckedRadioButtonId();
-        RadioButton rbpro=(RadioButton)findViewById(selid1);
-        String rbproval=(String) rbpro.getText();
-        ContentValues cv=new ContentValues();
-        cv.put("Name",Name1);
-        cv.put("Contact",contact);
-        cv.put("email",email);
-        cv.put("typeofreq",rbproval);
-        ds.insertOrThrow("Feedback","",cv);
-        ContentValues cv1=new ContentValues();
-        cv1.put("status","completed");
-       int row= ds.update("jobdetails",cv1,"jobid=?", new String[]{sel});
-        DataBaseHelper1.databaseversion=ds.getVersion();
-        dbhelper.close();
-        Toast.makeText(context, "Submitted your Feedback", Toast.LENGTH_LONG).show();
+        EditText txt = (EditText) findViewById(R.id.Cand_RequirementType);
+        String typo = txt.getText().toString();
+        RadioGroup rgp1 = (RadioGroup) findViewById(R.id.PROG_radio);
+        int selid1 = rgp1.getCheckedRadioButtonId();
 
+        if(Name1==null||contact==null||email==null||typo==null||selid1==-1)
+        {
+            Toast.makeText(context, "Please enter  all the values", Toast.LENGTH_LONG).show();
+        }
+        else {
+            RadioButton rbpro = (RadioButton) findViewById(selid1);
+            String rbproval = (String) rbpro.getText();
+            ContentValues cv = new ContentValues();
+            cv.put("Name", Name1);
+            cv.put("Contact", contact);
+            cv.put("email", email);
+            cv.put("typeofreq", typo);
+            cv.put("prog", rbproval);
 
+            ds.insertOrThrow("Feedback", "", cv);
+            ContentValues cv1 = new ContentValues();
+            cv1.put("status", "Completed");
+            int row = ds.update("jobdetails", cv1, "jobid=?", new String[]{sel});
+            DataBaseHelper1.databaseversion = ds.getVersion();
+            dbhelper.close();
+            Toast.makeText(context, "Submitted your Feedback", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, Homepage.class);
+            startActivity(intent);
+        }
     }
     @Override
     public void onBackPressed() {
@@ -128,7 +137,8 @@ public class FeedbackForm extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent intent = new Intent(this, Homepage.class);
+            startActivity(intent);
         }
     }
 

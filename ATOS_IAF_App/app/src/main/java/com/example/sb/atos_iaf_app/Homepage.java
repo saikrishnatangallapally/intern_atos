@@ -38,7 +38,6 @@ public class Homepage extends AppCompatActivity
     Session session;
     public static List<String> UpcomingInterviewsArray = new ArrayList<String>();
     public static List<String> AcceptedInterviewsArray = new ArrayList<String>();
-   // public static List<String> TodaysInterviewArray= new ArrayList<String>();
     public static List<String> CompletedInterview= new ArrayList<String>();
     public static String acc_string;
 
@@ -144,7 +143,7 @@ public class Homepage extends AppCompatActivity
         }*/
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         // Start the transaction.
-        db.beginTransaction();
+       // db.beginTransaction();
         UpcomingInterviewsArray.clear();
         AcceptedInterviewsArray.clear();
         //TodaysInterviewArray.clear();
@@ -187,7 +186,7 @@ public class Homepage extends AppCompatActivity
             }
             Cursor cursor2=db.query("jobdetails", columns, "status=?", new String[]{status3}, null, null, null);
             Log.d("DD", "ss1");
-            if (cursor1.getCount() > 0) {
+            if (cursor2.getCount() > 0) {
                 Log.d("DD", "ss");
                 while (cursor2.moveToNext()) {
                     // Read columns data
@@ -198,7 +197,7 @@ public class Homepage extends AppCompatActivity
                 }
 
             }
-            db.setTransactionSuccessful();
+           // db.setTransactionSuccessful();
         }
         catch (SQLiteException e)
         {
@@ -207,7 +206,7 @@ public class Homepage extends AppCompatActivity
         }
         finally
         {
-            db.endTransaction();
+         ///   db.endTransaction();
                     // End the transaction.
             db.close();
                     // Close database
@@ -237,7 +236,6 @@ public class Homepage extends AppCompatActivity
             listView3.setAdapter(adapter3);
 */
             ListView listView4 = (ListView) findViewById(R.id.ComInterview);
-        listView4.setAdapter(null);
             ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this,
                     R.layout.content_third_listcom,R.id.listcom, CompletedInterview);
             listView4.setAdapter(adapter4);
@@ -255,7 +253,7 @@ public class Homepage extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Toast.makeText(context, "u are on homepage cant go back na na na", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -304,6 +302,7 @@ public class Homepage extends AppCompatActivity
 
         } else if (id == R.id.nav_Logout) {
             session.logoutUser();
+            finish();
            // Intent a=new Intent(this,LoginScreen.class);
            // startActivity(a);
              return true;

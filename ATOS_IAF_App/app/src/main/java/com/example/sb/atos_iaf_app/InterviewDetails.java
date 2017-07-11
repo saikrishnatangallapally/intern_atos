@@ -215,125 +215,119 @@ public class InterviewDetails extends AppCompatActivity
     private void onScheduleClick() {
         RadioGroup rdgrp;
         RadioButton selectedRadioButton;
-        String date3=date1.getText().toString();
+        String date3=null;
+        date3=date1.getText().toString();
         String sel = Homepage.app_id_clicked.substring(0, Homepage.app_id_clicked.indexOf(" "));
         rdgrp=(RadioGroup)findViewById(R.id.radioGroup);
-        String radiovalue=  ((RadioButton)this.findViewById(rdgrp.getCheckedRadioButtonId())).getText().toString();
-        String slot=radiovalue.substring(0, radiovalue.indexOf(" "));
-        dbhelper = new DataBaseHelper1(context);
-      // dbhelper.openDataBase();
-        SQLiteDatabase my = dbhelper.getWritableDatabase();
-        String[] columns = {"Date","Email"};
-        HashMap<String, String> user = session.getUserDetails();
-        String email = user.get(Session.KEY_NAME);
-        Cursor cursor1 = my.query("slots", columns, "Date=? and Email=?", new String[]{date3,email}, null, null, null);
-        String slot1=null,slot2=null,slot3=null,checkslot=null;
-        Log.d("Aaaaaa",cursor1.getCount()+" ");
-        if (cursor1.getCount() > 0) {
-            if (cursor1.moveToFirst()) {
-                // Read columns data
-                if(slot.equals("10")) {
-                    checkslot = cursor1.getString(cursor1.getColumnIndex("Slot1"));
-                    if(checkslot.equals("True"))
-                    {
-                        Toast.makeText(getApplicationContext(),"Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
-                    }
-                    else{
-                        ContentValues cv1 = new ContentValues();
-                        cv1.put("Slot1", "True");
-                        int row =  my.update("slots", cv1, "Date=? and Email=?", new String[]{date3,email});
-                        Log.v("Row No", row + "");
-                        Toast.makeText(context, "Slot1", Toast.LENGTH_LONG).show();
-                    }
-                }
-                else if(slot.equals("12")) {
-                    checkslot = cursor1.getString(cursor1.getColumnIndex("Slot2"));
-                    if(checkslot.equals("True"))
-                    {
-                        Toast.makeText(getApplicationContext(),"Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
-                    }
-                    else
-                    {
-                        ContentValues cv2 = new ContentValues();
-                        cv2.put("Slot2", "True");
-                        int row =  my.update("slots", cv2, "Date=? and Email=?", new String[]{date3,email});
-                        Log.v("Row No", row + "");
-                        Toast.makeText(context, "Slot2", Toast.LENGTH_LONG).show();
-
-                    }
-                }
-                else if(slot.equals("2")) {
-                    checkslot = cursor1.getString(cursor1.getColumnIndex("Slot3"));
-                    if(checkslot.equals("True"))
-                    {
-                        Toast.makeText(getApplicationContext(),"Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
-                    }
-                    else
-                    {
-                        ContentValues cv3 = new ContentValues();
-                        cv3.put("Slot3", "True");
-                        int row =  my.update("slots", cv3, "Date=? and Email=?", new String[]{date3,email});
-                        Log.v("Row No", row + "");
-                        Toast.makeText(context, "Slot3", Toast.LENGTH_LONG).show();
-                    }
-                }
-
-
-            }
-        }
-        else
+        int rad=rdgrp.getCheckedRadioButtonId();
+        if(rad==-1||date3==null)
         {
-           // ContentValues contentValues = new ContentValues();
-
-            //contentValues.put("Email",email);
-            //contentValues.put("Date",date3);
-            if(slot.equals("10"))
-            {
-               // contentValues.put("Slot1","True");
-                //contentValues.put("Slot2","False");
-                //contentValues.put("Slot3","False");
-                slot1="True";
-                slot2="False";
-                slot3="False";
-
-            }
-            else if(slot.equals("12"))
-            {
-                //contentValues.put("Slot1","False");
-                //contentValues.put("Slot2","True");
-                //contentValues.put("Slot3","False");
-                slot1="False";
-                slot2="True";
-                slot3="False";
-            }
-            else if(slot.equals("2"))
-            {
-                //contentValues.put("Slot1","False");
-                //contentValues.put("Slot2","False");
-             //   contentValues.put("Slot3","True");
-                slot1="False";
-                slot2="False";
-                slot3="True";
-
-            }
-            //contentValues.put("AppID",sel);
-            //my.insert("slots",null ,contentValues);
-            String query = "INSERT INTO slots (Email,Date,Slot1,Slot2,Slot3,AppID) VALUES('"+email+"', '"+date3+"', '"+slot1+"', '"+slot2+"', '"+slot3+"', '"+sel+"');";
-            my.execSQL(query);
-            Toast.makeText(getApplicationContext(),"Saved Successfully", Toast.LENGTH_LONG).show();
-            ContentValues cv = new ContentValues();
-            cv.put("status", "Accepted");
-            int row =  my.update("jobdetails", cv, "appid=?", new String[]{sel});
-            Log.v("Row No", row + "");
-            Toast.makeText(context, "Scheduled your Interview", Toast.LENGTH_LONG).show();
-            dbhelper.close();
+            Toast.makeText(getApplicationContext(),"Please select the date and time", Toast.LENGTH_LONG).show();
         }
+        else {
+            RadioButton rbpro = (RadioButton) findViewById(rad);
+            String radiovalue = (String) rbpro.getText();
+            String slot = radiovalue.substring(0, radiovalue.indexOf(" "));
+            dbhelper = new DataBaseHelper1(context);
+            // dbhelper.openDataBase();
+            SQLiteDatabase my = dbhelper.getWritableDatabase();
+            String[] columns = {"Date", "Email"};
+            HashMap<String, String> user = session.getUserDetails();
+            String email = user.get(Session.KEY_NAME);
+            Cursor cursor1 = my.query("slots", columns, "Date=? and Email=?", new String[]{date3, email}, null, null, null);
+            String slot1 = null, slot2 = null, slot3 = null, checkslot = null;
+            Log.d("Aaaaaa", cursor1.getCount() + " ");
+            if (cursor1.getCount() > 0) {
+                if (cursor1.moveToFirst()) {
+                    // Read columns data
+                    if (slot.equals("10")) {
+                        checkslot = cursor1.getString(cursor1.getColumnIndex("Slot1"));
+                        if (checkslot.equals("True")) {
+                            Toast.makeText(getApplicationContext(), "Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
+                        } else {
+                            ContentValues cv1 = new ContentValues();
+                            cv1.put("Slot1", "True");
+                            int row = my.update("slots", cv1, "Date=? and Email=?", new String[]{date3, email});
+                            Log.v("Row No", row + "");
+                            Toast.makeText(context, "Slot1", Toast.LENGTH_LONG).show();
+                        }
+                    } else if (slot.equals("12")) {
+                        checkslot = cursor1.getString(cursor1.getColumnIndex("Slot2"));
+                        if (checkslot.equals("True")) {
+                            Toast.makeText(getApplicationContext(), "Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
+                        } else {
+                            ContentValues cv2 = new ContentValues();
+                            cv2.put("Slot2", "True");
+                            int row = my.update("slots", cv2, "Date=? and Email=?", new String[]{date3, email});
+                            Log.v("Row No", row + "");
+                            Toast.makeText(context, "Slot2", Toast.LENGTH_LONG).show();
+
+                        }
+                    } else if (slot.equals("2")) {
+                        checkslot = cursor1.getString(cursor1.getColumnIndex("Slot3"));
+                        if (checkslot.equals("True")) {
+                            Toast.makeText(getApplicationContext(), "Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
+                        } else {
+                            ContentValues cv3 = new ContentValues();
+                            cv3.put("Slot3", "True");
+                            int row = my.update("slots", cv3, "Date=? and Email=?", new String[]{date3, email});
+                            Log.v("Row No", row + "");
+                            Toast.makeText(context, "Slot3", Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+
+                }
+            } else {
+                // ContentValues contentValues = new ContentValues();
+
+                //contentValues.put("Email",email);
+                //contentValues.put("Date",date3);
+                if (slot.equals("10")) {
+                    // contentValues.put("Slot1","True");
+                    //contentValues.put("Slot2","False");
+                    //contentValues.put("Slot3","False");
+                    slot1 = "True";
+                    slot2 = "False";
+                    slot3 = "False";
+
+                } else if (slot.equals("12")) {
+                    //contentValues.put("Slot1","False");
+                    //contentValues.put("Slot2","True");
+                    //contentValues.put("Slot3","False");
+                    slot1 = "False";
+                    slot2 = "True";
+                    slot3 = "False";
+                } else if (slot.equals("2")) {
+                    //contentValues.put("Slot1","False");
+                    //contentValues.put("Slot2","False");
+                    //   contentValues.put("Slot3","True");
+                    slot1 = "False";
+                    slot2 = "False";
+                    slot3 = "True";
+
+                }
+                //contentValues.put("AppID",sel);
+                //my.insert("slots",null ,contentValues);
+                String query = "INSERT INTO slots (Email,Date,Slot1,Slot2,Slot3,AppID) VALUES('" + email + "', '" + date3 + "', '" + slot1 + "', '" + slot2 + "', '" + slot3 + "', '" + sel + "');";
+                my.execSQL(query);
+                Toast.makeText(getApplicationContext(), "Saved Successfully", Toast.LENGTH_LONG).show();
+                ContentValues cv = new ContentValues();
+                cv.put("status", "Accepted");
+                int row = my.update("jobdetails", cv, "appid=?", new String[]{sel});
+                Log.v("Row No", row + "");
+                Toast.makeText(context, "Scheduled your Interview", Toast.LENGTH_LONG).show();
+                dbhelper.close();
+                Intent intent = new Intent(this, Homepage.class);
+                startActivity(intent);
+            }
        /* ContentValues cv = new ContentValues();
         cv.put("status", "Accepted");
         int row =  my.update("jobdetails", cv, "appid=?", new String[]{sel});
         Log.v("Row No", row + "");
         Toast.makeText(context, "Scheduled your Interview", Toast.LENGTH_LONG).show();
         dbhelper.close();*/
+        }
 
     }
 
@@ -343,7 +337,8 @@ public class InterviewDetails extends AppCompatActivity
         if (drawer1.isDrawerOpen(GravityCompat.START)) {
             drawer1.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent intent = new Intent(this, Homepage.class);
+            startActivity(intent);
         }
     }
 
