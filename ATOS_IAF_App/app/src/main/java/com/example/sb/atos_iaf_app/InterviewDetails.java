@@ -228,14 +228,22 @@ public class InterviewDetails extends AppCompatActivity
         String email = user.get(Session.KEY_NAME);
         Cursor cursor1 = my.query("slots", columns, "Date=? and Email=?", new String[]{date3,email}, null, null, null);
         String slot1=null,slot2=null,slot3=null,checkslot=null;
+        Log.d("Aaaaaa",cursor1.getCount()+" ");
         if (cursor1.getCount() > 0) {
-            while (cursor1.moveToNext()) {
+            if (cursor1.moveToFirst()) {
                 // Read columns data
                 if(slot.equals("10")) {
                     checkslot = cursor1.getString(cursor1.getColumnIndex("Slot1"));
                     if(checkslot.equals("True"))
                     {
                         Toast.makeText(getApplicationContext(),"Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        ContentValues cv1 = new ContentValues();
+                        cv1.put("Slot1", "True");
+                        int row =  my.update("slots", cv1, "Date=? and Email=?", new String[]{date3,email});
+                        Log.v("Row No", row + "");
+                        Toast.makeText(context, "Slot1", Toast.LENGTH_LONG).show();
                     }
                 }
                 else if(slot.equals("12")) {
@@ -244,12 +252,29 @@ public class InterviewDetails extends AppCompatActivity
                     {
                         Toast.makeText(getApplicationContext(),"Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
                     }
+                    else
+                    {
+                        ContentValues cv2 = new ContentValues();
+                        cv2.put("Slot2", "True");
+                        int row =  my.update("slots", cv2, "Date=? and Email=?", new String[]{date3,email});
+                        Log.v("Row No", row + "");
+                        Toast.makeText(context, "Slot2", Toast.LENGTH_LONG).show();
+
+                    }
                 }
                 else if(slot.equals("2")) {
                     checkslot = cursor1.getString(cursor1.getColumnIndex("Slot3"));
                     if(checkslot.equals("True"))
                     {
                         Toast.makeText(getApplicationContext(),"Slot is busy.Go for other slot", Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        ContentValues cv3 = new ContentValues();
+                        cv3.put("Slot3", "True");
+                        int row =  my.update("slots", cv3, "Date=? and Email=?", new String[]{date3,email});
+                        Log.v("Row No", row + "");
+                        Toast.makeText(context, "Slot3", Toast.LENGTH_LONG).show();
                     }
                 }
 
@@ -296,17 +321,19 @@ public class InterviewDetails extends AppCompatActivity
             String query = "INSERT INTO slots (Email,Date,Slot1,Slot2,Slot3,AppID) VALUES('"+email+"', '"+date3+"', '"+slot1+"', '"+slot2+"', '"+slot3+"', '"+sel+"');";
             my.execSQL(query);
             Toast.makeText(getApplicationContext(),"Saved Successfully", Toast.LENGTH_LONG).show();
+            ContentValues cv = new ContentValues();
+            cv.put("status", "Accepted");
+            int row =  my.update("jobdetails", cv, "appid=?", new String[]{sel});
+            Log.v("Row No", row + "");
+            Toast.makeText(context, "Scheduled your Interview", Toast.LENGTH_LONG).show();
+            dbhelper.close();
         }
-       // my.beginTransaction();
-        ContentValues cv = new ContentValues();
+       /* ContentValues cv = new ContentValues();
         cv.put("status", "Accepted");
-        int row =  my.update("jobdetails", cv, "jobid=?", new String[]{sel});
-      //  DataBaseHelper1.databaseversion=my.getVersion();
-       // my.execSQL(query);
+        int row =  my.update("jobdetails", cv, "appid=?", new String[]{sel});
         Log.v("Row No", row + "");
         Toast.makeText(context, "Scheduled your Interview", Toast.LENGTH_LONG).show();
-    //    my.endTransaction();
-        dbhelper.close();
+        dbhelper.close();*/
 
     }
 
