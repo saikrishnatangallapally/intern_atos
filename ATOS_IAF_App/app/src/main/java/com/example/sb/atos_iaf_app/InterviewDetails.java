@@ -248,10 +248,13 @@ public class InterviewDetails extends AppCompatActivity
    {
        EditText For;
        Button edt;
+       TextView label;
        For = (EditText)findViewById(R.id.edtbox);
        edt = ( Button)findViewById(R.id.edtbox1) ;
+       label = (TextView)findViewById(R.id.fwduser);
        For.setVisibility(View.VISIBLE);
        edt.setVisibility(View.VISIBLE);
+       label.setVisibility(View.VISIBLE);
 
        edt.setOnClickListener(new View.OnClickListener() {
            @Override
