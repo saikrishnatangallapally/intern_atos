@@ -158,6 +158,13 @@ public class InterviewDetails extends AppCompatActivity
                 onScheduleClick();
             }
         });
+        Button Reject = (Button) findViewById(R.id.Reject);
+        Reject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onRejectClick();
+            }
+        });
         db.endTransaction();
         dbhelper.close();
         date = (Button) findViewById(R.id.date);
@@ -210,7 +217,20 @@ public class InterviewDetails extends AppCompatActivity
             }
         },day,mon,year);
     }
+   private void onRejectClick()
+   {
+       String sel = Homepage.app_id_clicked.substring(0, Homepage.app_id_clicked.indexOf(" "));
+       dbhelper = new DataBaseHelper1(context);
+       // dbhelper.openDataBase();
+       SQLiteDatabase my = dbhelper.getWritableDatabase();
+       ContentValues c = new ContentValues();
+       c.put("status", "Declined");
+       int row = my.update("jobdetails", c, "appid=?", new String[]{sel});
+       Log.v("Row No", row + "");
+       Toast.makeText(context, "Rejected your Interview", Toast.LENGTH_LONG).show();
+       dbhelper.close();
 
+   }
 
     private void onScheduleClick() {
         RadioGroup rdgrp;
