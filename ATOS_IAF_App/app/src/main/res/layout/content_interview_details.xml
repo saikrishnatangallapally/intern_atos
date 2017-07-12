@@ -93,6 +93,33 @@
         app:layout_constraintTop_toBottomOf="@+id/date1"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent" />
+    <EditText
+        android:id="@+id/edtbox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/edtbox1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+
+        android:text="Confirm"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <Button
         android:id="@+id/Reject"

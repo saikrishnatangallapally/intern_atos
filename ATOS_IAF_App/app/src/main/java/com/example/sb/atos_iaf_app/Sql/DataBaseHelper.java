@@ -167,7 +167,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     }
     public String searchUser(String user) {
         myDataBase = this.getReadableDatabase();
-        Cursor c = myDataBase.rawQuery(" Select Email,OTP from Details ", null);
+        Cursor c = myDataBase.rawQuery(" Select Email,OTP,Name from Details ", null);
         String a, b;
         b = "not found";
 

@@ -37,8 +37,8 @@ public class InterviewDetails extends AppCompatActivity
     private Context context;
     DataBaseHelper1 dbhelper;
     Session session;
-    Button date;
-    EditText date1;
+    Button date,edt;
+    EditText date1,For;
     private int day, mon, year;
     private DatePickerDialog.OnDateSetListener mdate;
 
@@ -141,6 +141,10 @@ public class InterviewDetails extends AppCompatActivity
 
             }
         }
+        For = (EditText) findViewById(R.id.edtbox) ;
+        For.setVisibility(View.GONE);
+        edt = (Button) findViewById(R.id.edtbox1) ;
+        edt.setVisibility(View.GONE);
         TextView txtcandID = (TextView) findViewById(R.id.jobid);
         txtcandID.setText("Job ID:                   " + JID);
         TextView txtcandName = (TextView) findViewById(R.id.candName);
@@ -163,6 +167,15 @@ public class InterviewDetails extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 onRejectClick();
+            }
+        });
+        Button Forward = (Button) findViewById(R.id.forward);
+        For = (EditText) findViewById(R.id.edtbox) ;
+        For.setVisibility(View.GONE);
+        Forward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onForwardClick();
             }
         });
         db.endTransaction();
@@ -231,7 +244,38 @@ public class InterviewDetails extends AppCompatActivity
        dbhelper.close();
 
    }
+   private void onForwardClick()
+   {
+       EditText For;
+       Button edt;
+       For = (EditText)findViewById(R.id.edtbox);
+       edt = ( Button)findViewById(R.id.edtbox1) ;
+       For.setVisibility(View.VISIBLE);
+       edt.setVisibility(View.VISIBLE);
 
+       edt.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               onConfirmClick();
+           }
+       });
+
+   }
+   private void onConfirmClick()
+   {
+       String name=For.getText().toString();
+       String sel = Homepage.app_id_clicked.substring(0, Homepage.app_id_clicked.indexOf(" "));
+       dbhelper = new DataBaseHelper1(context);
+       // dbhelper.openDataBase();
+       SQLiteDatabase my = dbhelper.getWritableDatabase();
+       ContentValues c = new ContentValues();
+       c.put("Assigned", name);
+        int row =  my.update("jobdetails", c, "appid=?", new String[]{sel});
+        Log.v("Row No", row + "");
+        Toast.makeText(context, "Forwarded", Toast.LENGTH_LONG).show();
+        dbhelper.close();
+
+   }
     private void onScheduleClick() {
         RadioGroup rdgrp;
         RadioButton selectedRadioButton;

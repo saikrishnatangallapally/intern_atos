@@ -77,12 +77,12 @@ public class Homepage extends AppCompatActivity
         HashMap<String, String> user = session.getUserDetails();
 
         // name
-        String name = user.get(Session.KEY_NAME);
+        String email = user.get(Session.KEY_NAME);
 
         // email
-        Log.d("user", name);
+        Log.d("user1", email);
         String password = user.get(Session.KEY_PASSWORD);
-        System.out.print(name);
+       // System.out.print(name);
 
         // displaying user data
         // lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
@@ -141,7 +141,18 @@ public class Homepage extends AppCompatActivity
             TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(R.id.title);
             tv.setTextColor(0xffffffff);
         }*/
+       String fullname=null;
         SQLiteDatabase db = dbhelper.getReadableDatabase();
+        String[] col={"Name"};
+       // Cursor d = db.rawQuery(" Select Email,OTP,Name from Details ", null);
+       Cursor d=db.query("Details", col, "Email=?", new String[]{email}, null, null, null);
+        if(d.getCount()>0)
+        {
+            if (d.moveToFirst()) {
+                 fullname = d.getString(d.getColumnIndex("Name"));
+            }
+
+        }
         // Start the transaction.
        // db.beginTransaction();
         UpcomingInterviewsArray.clear();
@@ -157,7 +168,7 @@ public class Homepage extends AppCompatActivity
             String status2 = "Accepted";
             String status3="Completed";
             String[] columns = {"AppID", "JobDescription", "JobID"};
-           Cursor cursor = db.query("jobdetails", columns, "status=?", new String[]{status1}, null, null, null);
+           Cursor cursor = db.query("jobdetails", columns, "status=? and Assigned=?", new String[]{status1,fullname}, null, null, null);
 
             Log.d("DD", "ss1");
             if (cursor.getCount() > 0) {
@@ -171,7 +182,7 @@ public class Homepage extends AppCompatActivity
                 }
 
             }
-            Cursor cursor1=db.query("jobdetails", columns, "status=?", new String[]{status2}, null, null, null);
+            Cursor cursor1=db.query("jobdetails", columns, "status=? and Assigned=?", new String[]{status2,fullname}, null, null, null);
             Log.d("DD", "ss1");
             if (cursor1.getCount() > 0) {
                 Log.d("DD", "ss");
@@ -184,7 +195,7 @@ public class Homepage extends AppCompatActivity
                 }
 
             }
-            Cursor cursor2=db.query("jobdetails", columns, "status=?", new String[]{status3}, null, null, null);
+            Cursor cursor2=db.query("jobdetails", columns, "status=? and Assigned=?", new String[]{status3,fullname}, null, null, null);
             Log.d("DD", "ss1");
             if (cursor2.getCount() > 0) {
                 Log.d("DD", "ss");
