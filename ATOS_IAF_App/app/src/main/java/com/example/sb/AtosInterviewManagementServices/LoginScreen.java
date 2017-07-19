@@ -1,4 +1,4 @@
-package com.example.sb.atos_iaf_app;
+package com.example.sb.AtosInterviewManagementServices;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -15,7 +15,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +30,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sb.atos_iaf_app.Sql.DataBaseHelper;
+import com.example.sb.AtosInterviewManagementServices.Sql.DataBaseHelper;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.sb.atos_iaf_app;
+package com.example.sb.AtosInterviewManagementServices;
 
 import org.junit.Test;
 

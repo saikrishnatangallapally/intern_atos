@@ -1,4 +1,4 @@
-package com.example.sb.atos_iaf_app;
+package com.example.sb.AtosInterviewManagementServices;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,8 +22,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sb.atos_iaf_app.Sql.DataBaseHelper;
-import com.example.sb.atos_iaf_app.Sql.DataBaseHelper1;
+import com.example.sb.AtosInterviewManagementServices.Sql.DataBaseHelper1;
 
 public class FeedbackForm extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

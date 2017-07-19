@@ -1,4 +1,4 @@
-package com.example.sb.atos_iaf_app;
+package com.example.sb.AtosInterviewManagementServices;
 
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
@@ -27,7 +27,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sb.atos_iaf_app.Sql.DataBaseHelper1;
+import com.example.sb.AtosInterviewManagementServices.Sql.DataBaseHelper1;
 
 import java.util.Calendar;
 import java.util.HashMap;

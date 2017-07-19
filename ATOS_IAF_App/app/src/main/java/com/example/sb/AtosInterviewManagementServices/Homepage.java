@@ -1,4 +1,4 @@
-package com.example.sb.atos_iaf_app;
+package com.example.sb.AtosInterviewManagementServices;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +23,7 @@ import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sb.atos_iaf_app.Sql.DataBaseHelper1;
+import com.example.sb.AtosInterviewManagementServices.Sql.DataBaseHelper1;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.example.sb.atos_iaf_app;
+package com.example.sb.AtosInterviewManagementServices;
 import java.util.HashMap;
 import android.content.Context;
 import android.content.Intent;

@@ -1,6 +1,7 @@
-package com.example.sb.atos_iaf_app.Sql;
+package com.example.sb.AtosInterviewManagementServices.Sql;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -13,7 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class DataBaseHelper1 extends SQLiteOpenHelper{
+public class DataBaseHelper extends SQLiteOpenHelper{
 
     //The Android's default system path of your application database.
     private static String DB_PATH = "/data/data/com.example.sb.atos_iaf_app/databases/";
@@ -23,16 +24,15 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
     private SQLiteDatabase myDataBase;
 
     private final Context myContext;
-    public static int databaseversion=1;
 
     /**
      * Constructor
      * Takes and keeps a reference of the passed context in order to access to the application assets and resources.
      * @param context
      */
-    public DataBaseHelper1(Context context) {
+    public DataBaseHelper(Context context) {
 
-        super(context, DB_NAME, null,databaseversion);
+        super(context, DB_NAME, null, 1);
         this.myContext = context;
         int c;
         try{
@@ -42,7 +42,7 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
                 c=1;
                 //Toast.makeText(context, "database exists", Toast.LENGTH_LONG).show();
             else
-                Toast.makeText(context, "cant find database", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "cant find database", Toast.LENGTH_LONG).show();
         }
         catch(SQLiteException e){
             System.out.println("Database doesn't exist");
@@ -136,6 +136,18 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
 
     }
 
+    private void copyBack() throws IOException
+    {
+        //Open your local db as the input stream
+        InputStream myInput = myContext.getAssets().open(DB_NAME);
+
+        // Path to the just created empty db
+        String outFileName = DB_PATH + DB_NAME;
+
+        //Open the empty db as the output stream
+        OutputStream myOutput = new FileOutputStream(outFileName);
+    }
+
     public void openDataBase() throws SQLException {
 
         //Open the database
@@ -153,10 +165,47 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
         super.close();
 
     }
+    public String searchUser(String user) {
+        myDataBase = this.getReadableDatabase();
+        Cursor c = myDataBase.rawQuery(" Select Email,OTP,Name from Details ", null);
+        String a, b;
+        b = "not found";
+
+        if (c.moveToFirst()) {
+            do {
+                a = c.getString(0);
+                if (a.equals(user)) {
+                    b = c.getString(1);
+
+                }
+            }
+
+            while (c.moveToNext());
+        }
+        myDataBase.close();
+        return b;
+    }
+    public String displayJobID() {
+        myDataBase = this.getReadableDatabase();
+        Cursor c = myDataBase.rawQuery(" Select JobID from JobList ", null);
+        String a, b = null;
+        int ct=0;
+        if(c.moveToFirst()){
+            do {
+                b =c.getString(1);
+                ct++;
+
+                }
+                while (c.moveToNext());
+
+            }
+            myDataBase.close();
+        return b;
+
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
 
     }
 
@@ -165,9 +214,6 @@ public class DataBaseHelper1 extends SQLiteOpenHelper{
 
     }
 
-    public SQLiteDatabase getDataBase() {
-        return myDataBase;
-    }
     // Add your public helper methods to access and get description from the database.
     // You could return cursors by doing "return myDataBase.query(....)" so it'd be easy
     // to you to create adapters for your views.
